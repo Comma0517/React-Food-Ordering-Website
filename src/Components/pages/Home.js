@@ -1,15 +1,14 @@
-import { Route, Router, Switch } from "react-router-dom";
 import React from "react";
 import "../../App.css";
-import HeroSection from "../HeroSection";
 import Cards from "../Cards";
+import HeroSection from "../HeroSection";
 import Footer from "../Footer";
 
 function Home() {
   return (
     <>
-      <HeroSection></HeroSection>
-      <Cards></Cards>
+      <HeroSection />
+      <Cards />
       <Footer />
     </>
   );
