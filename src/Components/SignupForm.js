@@ -1,9 +1,14 @@
 import React from "react";
-import useForm from "./UseForm";
 import validate from "./ValidateInfo";
+import useForm from "./UseForm";
 import "./Form.css";
-function SignupForm() {
-  const { handleChange, values, handleSubmit, errors } = useForm(validate);
+
+const FormSignup = ({ submitForm }) => {
+  const { handleChange, handleSubmit, values, errors } = useForm(
+    submitForm,
+    validate
+  );
+
   return (
     <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form" noValidate>
@@ -68,6 +73,6 @@ function SignupForm() {
       </form>
     </div>
   );
-}
+};
 
-export default SignupForm;
+export default FormSignup;
