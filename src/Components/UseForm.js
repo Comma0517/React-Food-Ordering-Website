@@ -1,14 +1,16 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import { useAuth } from "../Components/AuthContext";
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({
-    username: "",
     email: "",
     password: "",
     password2: "",
   });
-  const [errors, setErrors] = useState({});
+
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { signup } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,20 +20,26 @@ const useForm = (callback, validate) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
-
-    setErrors(validate(values));
-    setIsSubmitting(true);
-  };
-
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      callback();
+    if (values.password !== values.password2) {
+      return setError("Passwords do not match");
     }
-  }, [errors]);
 
-  return { handleChange, handleSubmit, values, errors };
+    try {
+      setError("");
+      setLoading(true);
+      await signup(values.email, values.password);
+
+      setIsSubmitting(true);
+    } catch {
+      setError("Failed to create an account");
+    }
+
+    setLoading(false);
+  }
+
+  return { handleChange, handleSubmit, values, loading, error };
 };
 
 export default useForm;

@@ -1,33 +1,23 @@
 import React from "react";
-import validate from "./ValidateInfo";
+import { useState, useEffect } from "react";
+import { Alert } from "react-bootstrap";
+
 import useForm from "./UseForm";
 import "./Form.css";
 
 const FormSignup = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, errors } = useForm(
-    submitForm,
-    validate
+  const { handleChange, handleSubmit, values, loading, error } = useForm(
+    submitForm
   );
 
   return (
     <div className="form-content-right">
-      <form onSubmit={handleSubmit} className="form" noValidate>
+      <form onSubmit={handleSubmit} className="form">
         <h1>
           Get started with us today! Create your account by filling out the
           information below.
         </h1>
-        <div className="form-inputs">
-          <label className="form-label">Username</label>
-          <input
-            className="form-input"
-            type="text"
-            name="username"
-            placeholder="Enter your username"
-            value={values.username}
-            onChange={handleChange}
-          />
-          {errors.username && <p>{errors.username}</p>}
-        </div>
+        {error && <Alert style={{ color: "red" }}>{error}</Alert>}
         <div className="form-inputs">
           <label className="form-label">Email</label>
           <input
@@ -38,7 +28,6 @@ const FormSignup = ({ submitForm }) => {
             value={values.email}
             onChange={handleChange}
           />
-          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Password</label>
@@ -50,7 +39,6 @@ const FormSignup = ({ submitForm }) => {
             value={values.password}
             onChange={handleChange}
           />
-          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Confirm Password</label>
@@ -62,13 +50,12 @@ const FormSignup = ({ submitForm }) => {
             value={values.password2}
             onChange={handleChange}
           />
-          {errors.password2 && <p>{errors.password2}</p>}
         </div>
-        <button className="form-input-btn" type="submit">
+        <button disabled={loading} className="form-input-btn" type="submit">
           Sign up
         </button>
         <span className="form-input-login">
-          Already have an account? Login <a href="#">here</a>
+          Already have an account? Login <a href="/login">here</a>
         </span>
       </form>
     </div>
