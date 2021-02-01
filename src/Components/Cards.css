@@ -8,7 +8,6 @@ h1 {
 }
 
 .cards__container {
-  display: flex;
   flex-flow: column;
   align-items: center;
   max-width: 1120px;
@@ -97,6 +96,22 @@ h1 {
   color: #252e48;
   font-size: 18px;
   line-height: 24px;
+}
+.cards__item_button {
+  color: white;
+  background-color: black;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  border: none;
+}
+.cards__item_button:hover {
+  background-color: #4caf50;
+
+  color: black;
 }
 
 @media only screen and (min-width: 1200px) {

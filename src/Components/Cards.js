@@ -5,41 +5,32 @@ import CardItem from "./CardsItem";
 function Cards() {
   return (
     <div className="cards">
-      <h1>Check out these epic Destinations!</h1>
+      <h1>Dagens retter</h1>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
             <CardItem
-              src="images/img-9.jpg"
-              text="Explore the hidden waterfall deep inside the Amazon Jungle"
-              label="Adventure"
+              src="images/pizza.jpg"
+              text="Pizza er et fladt rundt brød med topping af olivenolie og tomatsauce, samt få - eller flere ingredienser som topping af forskellig type. Den kan købes på et pizzeria, en restaurant, eller den kan være hjemmelavet."
+              amountLeft="3"
+              label="Pizza"
               path="/services"
             />
             <CardItem
-              src="images/img-2.jpg"
-              text="Travel through the Islands of Bali in a Private Cruise"
-              label="Luxury"
+              src="images/salmon.jpg"
+              text="Laks med porrer er en af de mest populære retter med fisk. Her med spidskål og gulerødder."
+              amountLeft="5"
+              label="Fisk"
               path="/services"
             />
           </ul>
           <ul className="cards__items">
             <CardItem
-              src="images/img-3.jpg"
-              text="Set Sail in the Atlantic Ocean visiting Uncharted Waters"
-              label="Mystery"
+              src="images/salad.jpg"
+              text="Carpaccio salat er en virkelig lækker opgradering af den traditionelle carpaccio."
+              amountLeft="0"
+              label="Salat"
               path="/services"
-            />
-            <CardItem
-              src="images/img-4.jpg"
-              text="Experience Football on Top of the Himilayan Mountains"
-              label="Adventure"
-              path="/products"
-            />
-            <CardItem
-              src="images/img-8.jpg"
-              text="Ride through the Sahara Desert on a guided camel tour"
-              label="Adrenaline"
-              path="/sign-up"
             />
           </ul>
         </div>
