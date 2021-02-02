@@ -19,7 +19,7 @@ function Footer() {
               className="footer-input"
               name="email"
               type="email"
-              placeholder="Your Email"
+              placeholder="Din Email"
             />
             <Button buttonStyle="btn--outline">Abonnér</Button>
           </form>
