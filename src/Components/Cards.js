@@ -24,6 +24,7 @@ const Cards = ({ setSelectedImg }) => {
               <CardItem
                 src={doc.url}
                 key={doc.id}
+                text={doc.text}
                 layout
                 onClick={() => setSelectedImg(doc.url)}
               ></CardItem>

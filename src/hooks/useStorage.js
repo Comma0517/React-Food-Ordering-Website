@@ -5,6 +5,8 @@ const useStorage = (file) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
+  const [text, setText] = useState(null);
+  const [amount, setAmount] = useState(null);
 
   useEffect(() => {
     // references
@@ -23,7 +25,7 @@ const useStorage = (file) => {
       async () => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
-        await collectionRef.add({ url, createdAt });
+        await collectionRef.add({ url, createdAt, text, amount });
         setUrl(url);
       }
     );
