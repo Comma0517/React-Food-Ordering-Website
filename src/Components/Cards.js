@@ -1,11 +1,14 @@
 import React from "react";
 import "./Cards.css";
 import CardItem from "./CardsItem";
-
+import UploadForm from "./UploadForm";
 function Cards() {
   return (
     <div className="cards">
       <h1>Dagens retter</h1>
+      <p>Tilføj ret </p>
+
+      <UploadForm></UploadForm>
       <div className="cards__container">
         <div className="cards__wrapper">
           <ul className="cards__items">
