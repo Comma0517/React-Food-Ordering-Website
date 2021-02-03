@@ -9,7 +9,6 @@ const useStorage = (file) => {
   const [amount, setAmount] = useState(null);
 
   useEffect(() => {
-    // references
     const storageRef = projectStorage.ref(file.name);
     const collectionRef = projectFirestore.collection("images");
 
