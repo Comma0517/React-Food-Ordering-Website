@@ -5,7 +5,9 @@ import "./UploadForm.css";
 const UploadForm = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  const [text, setText] = useState(null);
+  const [imageText, setImageText] = useState(null);
+  const [amountLeft, setAmountLeft] = useState(null);
+  const [imageLabel, setImageLabel] = useState(null);
   const allowedTypes = ["image/png", "image/jpeg"];
   const changeHandler = (e) => {
     let selected = e.target.files[0];
@@ -20,19 +22,64 @@ const UploadForm = () => {
   };
 
   return (
-    <form className="uploadForm">
-      <label className="uploadImage">
-        <input type="file" onChange={changeHandler} />
-        <span>+</span>
-      </label>
-
-      {/* Progress bar */}
-      <div className="output">
-        {error && <div className="error">{error}</div>}
-        {file && <div>{file.name}</div>}
-        {file && <ProgressBar file={file} setFile={setFile} />}
-      </div>
-    </form>
+    <>
+      <form className="uploadForm">
+        <h1>Upload en ret</h1>
+        <label className="uploadImage">
+          <input type="file" onChange={changeHandler} />
+          <span>+</span>
+        </label>
+        <div className="textForm">
+          <div className="form-control">
+            <label htmlFor="imageText">Billede tekst : </label>
+            <input
+              type="text"
+              id="imageText"
+              name="imageText"
+              value={imageText}
+              onChange={(e) => setImageText(e.target.value)}
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="amountLeft">Antal retter : </label>
+            <input
+              type="number"
+              id="amountLeft"
+              name="amountLeft"
+              value={amountLeft}
+              onChange={(e) => setAmountLeft(e.target.value)}
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="imageLabel">Billede label : </label>
+            <input
+              type="text"
+              id="imageLabel"
+              name="imageLabel"
+              value={imageLabel}
+              onChange={(e) => setImageLabel(e.target.value)}
+            />
+          </div>
+        </div>
+        {/* Progress bar */}
+        <div className="output">
+          {error && <div className="error">{error}</div>}
+          {file && <div>{file.name}</div>}
+          {file && (
+            <ProgressBar
+              file={file}
+              setFile={setFile}
+              imageText={imageText}
+              setImageText={setImageText}
+              amountLeft={amountLeft}
+              setAmountLeft={setAmountLeft}
+              imageLabel={imageLabel}
+              setImageLabel={setImageLabel}
+            />
+          )}
+        </div>
+      </form>
+    </>
   );
 };
 export default UploadForm;
