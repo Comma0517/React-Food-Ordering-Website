@@ -11,14 +11,7 @@ function Signup() {
   return (
     <>
       <div className="form-container">
-        <div className="form-content-left">
-          <img className="form-img" src="/images/img-2.svg" alt="spaceship" />
-        </div>
-        {!isSubmitted ? (
-          <SignupForm submitForm={submitForm} />
-        ) : (
-          <FormSuccess />
-        )}
+        <SignupForm submitForm={submitForm} />
       </div>
     </>
   );

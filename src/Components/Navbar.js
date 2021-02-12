@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./Button";
+import { ButtonCart } from "./ButtonCart";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
@@ -42,7 +43,7 @@ function Navbar() {
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Hjælp
+                Om os
               </Link>
             </li>
 
@@ -61,6 +62,12 @@ function Navbar() {
               {" "}
               <i class="fas fa-user"></i> Log ind
             </Button>
+          )}
+          {button && (
+            <ButtonCart buttonStyle="btn--outline">
+              {" "}
+              <i class="fas fa-shopping-cart"></i>
+            </ButtonCart>
           )}
         </div>
       </nav>

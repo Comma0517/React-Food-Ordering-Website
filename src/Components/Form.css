@@ -3,13 +3,12 @@
 }
 .form-container {
   margin: 100px auto;
-  width: 1000px;
+  width: 500px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
   height: 600px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 .close-btn {

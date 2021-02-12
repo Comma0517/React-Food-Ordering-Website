@@ -13,10 +13,7 @@ const FormSignup = ({ submitForm }) => {
   return (
     <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form">
-        <h1>
-          Get started with us today! Create your account by filling out the
-          information below.
-        </h1>
+        <h1>Opret konto</h1>
         {error && <Alert style={{ color: "red" }}>{error}</Alert>}
         <div className="form-inputs">
           <label className="form-label">Email</label>
@@ -55,7 +52,7 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className="form-input-login">
-          Already have an account? Login <a href="/login">here</a>
+          Har du allerede en konto? <a href="/login">Log ind </a>
         </span>
       </form>
     </div>

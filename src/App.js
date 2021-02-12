@@ -7,6 +7,7 @@ import Services from "./Components/pages/Services";
 import Products from "./Components/pages/Products";
 import SignUp from "./Components/pages/Signup";
 import Login from "./Components/Login";
+import Cart from "./Components/pages/Cart";
 import { AuthProvider } from "./Components/AuthContext";
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/products" exact component={Products} />
             <Route path="/Sign-up" exact component={SignUp} />
             <Route path="/login" exact component={Login} />
+            <Route path="/cart" exact component={Cart} />
           </Switch>
         </AuthProvider>
       </Router>
