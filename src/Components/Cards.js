@@ -5,6 +5,7 @@ import UploadForm from "./UploadForm";
 import useFirestore from "../hooks/useFireStore";
 const Cards = ({ setSelectedImg }) => {
   const { docs } = useFirestore("images");
+
   return (
     <div className="cards">
       <h1>Dagens retter</h1>
@@ -20,8 +21,8 @@ const Cards = ({ setSelectedImg }) => {
                 text={doc.imageText}
                 amountLeft={doc.amountLeft}
                 label={doc.imageLabel}
+                price={doc.price}
                 layout
-                onClick={() => setSelectedImg(doc.url)}
               ></CardItem>
             ))}
         </div>

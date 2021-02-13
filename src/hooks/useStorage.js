@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { projectStorage, projectFirestore, timestamp } from "../Firebase";
 
-const useStorage = (file, imageText, amountLeft, imageLabel) => {
+const useStorage = (file, imageText, amountLeft, imageLabel, price) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
@@ -29,6 +29,7 @@ const useStorage = (file, imageText, amountLeft, imageLabel) => {
           imageText,
           amountLeft,
           imageLabel,
+          price,
         });
         setUrl(url);
       }

@@ -8,6 +8,7 @@ const UploadForm = () => {
   const [imageText, setImageText] = useState(null);
   const [amountLeft, setAmountLeft] = useState(null);
   const [imageLabel, setImageLabel] = useState(null);
+  const [price, setPrice] = useState(null);
   const allowedTypes = ["image/png", "image/jpeg"];
   const changeHandler = (e) => {
     let selected = e.target.files[0];
@@ -60,6 +61,16 @@ const UploadForm = () => {
               onChange={(e) => setImageLabel(e.target.value)}
             />
           </div>
+          <div className="form-control">
+            <label htmlFor="imageLabel">Pris i DKK : </label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
         </div>
         {/* Progress bar */}
         <div className="output">
@@ -75,6 +86,8 @@ const UploadForm = () => {
               setAmountLeft={setAmountLeft}
               imageLabel={imageLabel}
               setImageLabel={setImageLabel}
+              price={price}
+              setPrice={setPrice}
             />
           )}
         </div>

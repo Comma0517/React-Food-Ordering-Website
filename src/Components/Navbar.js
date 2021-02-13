@@ -56,6 +56,15 @@ function Navbar() {
                 Log ind
               </Link>
             </li>
+            <li>
+              <Link
+                to="/sign-up"
+                className="nav-links-mobile"
+                onClick={closeMobileMenu}
+              >
+                Kurv <i class="fas fa-shopping-cart"></i>
+              </Link>
+            </li>
           </ul>
           {button && (
             <Button buttonStyle="btn--outline">

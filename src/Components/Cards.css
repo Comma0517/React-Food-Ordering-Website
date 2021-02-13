@@ -116,6 +116,9 @@ h1 {
 .cards_item_amountLeft {
   color: green;
 }
+.cards__item__price {
+  float: right;
+}
 
 @media only screen and (min-width: 1200px) {
   .content__blog__container {

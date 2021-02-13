@@ -1,9 +1,9 @@
 import React from "react";
-
+import CartShow from "../CartShow";
 function Cart() {
   return (
     <>
-      <p>Cart</p>
+      <CartShow></CartShow>
     </>
   );
 }
