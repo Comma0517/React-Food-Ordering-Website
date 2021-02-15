@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "./CartContext";
 
 function CardItem(props) {
-  const [cart, setCart] = useState([]);
-  const addToCart = () => {};
-  const deleteCard = () => {};
+  const [cart, setCart] = useContext(CartContext);
+
+  function addToCart() {
+    const foodItem = { name: props.text, price: props.price };
+    setCart((currentState) => [...currentState, foodItem]);
+  }
 
   return (
     <>
       <li className="cards__item">
         <div className="cards__item__link">
-          <button onClick={deleteCard}>Delete</button>
           <figure className="cards__item__pic-wrap" data-category={props.label}>
             <img
               className="cards__item__img"

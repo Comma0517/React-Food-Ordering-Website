@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Button } from "./Button";
 import { ButtonCart } from "./ButtonCart";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { CartContext } from "./CartContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
+  const [cart, setCart] = useContext(CartContext);
+  const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -75,7 +77,7 @@ function Navbar() {
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}
-              0 <i class="fas fa-shopping-cart"></i>
+              {cart.length} <i class="fas fa-shopping-cart"></i> {totalPrice},-
             </ButtonCart>
           )}
         </div>

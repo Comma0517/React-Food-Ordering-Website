@@ -55,48 +55,6 @@ export default function Login() {
       <div className="w-100 text-center mt-2">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
-
-      <div className="form-container">
-        <div className="form-content-right">
-          <form onSubmit={handleSubmit} className="form">
-            <h1>Log ind</h1>
-            {error && <Alert style={{ color: "red" }}>{error}</Alert>}
-            <div className="form-inputs">
-              <label className="form-label" ref={emailRef}>
-                Email
-              </label>
-              <input
-                className="form-input"
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                id="email"
-              />
-            </div>
-            <div className="form-inputs">
-              <label className="form-label" ref={passwordRef}>
-                Password
-              </label>
-              <input
-                className="form-input"
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                id="password"
-              />
-            </div>
-            <button disabled={loading} className="form-input-btn" type="submit">
-              Log ind
-            </button>
-            <div className="w-100 text-center mt-3">
-              <Link to="/forgot-password">Jeg har glemt mit password</Link>
-            </div>
-            <span className="form-input-login">
-              Ny på Food? <a href="/sign-up">Opret konto</a>
-            </span>
-          </form>
-        </div>
-      </div>
     </>
   );
 }
