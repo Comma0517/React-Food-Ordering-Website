@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 import { Button } from "./Button";
 import { Link } from "react-router-dom";
-
+const link = "https://www.linkedin.com/in/martin-holt-lykke/";
 function Footer() {
   return (
     <div className="footer-container">
@@ -30,18 +30,18 @@ function Footer() {
           <div class="footer-link-items">
             <h2>Om os</h2>
             <Link to="/sign-up">Hvordan det virker</Link>
-            <Link to="/">Terms of Service</Link>
+            <Link to={link}>Terms of Service</Link>
           </div>
           <div class="footer-link-items">
             <h2>Kontakt os</h2>
-            <Link to="/">Kontakt</Link>
-            <Link to="/">Support</Link>
+            <Link to={link}>Kontakt</Link>
+            <Link to={link}>Support</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>Videoer</h2>
-            <Link to="/">På vej..</Link>
+            <Link to={link}>På vej..</Link>
           </div>
         </div>
       </div>
@@ -53,51 +53,47 @@ function Footer() {
               <i class="fas fa-utensils" />
             </Link>
           </div>
-          <small class="website-rights">Food © 2021</small>
+          <small class="website-rights">Martin Lykke © 2021</small>
           <small class="website-rights">
             Made with <i class="fab fa-react"></i>
           </small>
           <div class="social-icons">
-            <Link
+            <a
               class="social-icon-link facebook"
-              to="/"
+              href={link}
               target="_blank"
               aria-label="Facebook"
             >
               <i class="fab fa-facebook-f" />
-            </Link>
-            <Link
+            </a>
+            <a
               class="social-icon-link instagram"
-              to="/"
+              href={link}
               target="_blank"
               aria-label="Instagram"
             >
               <i class="fab fa-instagram" />
-            </Link>
-            <Link
+            </a>
+            <a
               class="social-icon-link youtube"
-              to="/"
+              href={link}
               target="_blank"
               aria-label="Youtube"
             >
               <i class="fab fa-youtube" />
-            </Link>
-            <Link
+            </a>
+            <a
               class="social-icon-link twitter"
-              to="/"
+              href={link}
               target="_blank"
               aria-label="Twitter"
             >
               <i class="fab fa-twitter" />
-            </Link>
-            <Link
-              class="social-icon-link twitter"
-              to="/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
+            </a>
+
+            <a class="social-icon-link" target="_blank" href={link}>
               <i class="fab fa-linkedin" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

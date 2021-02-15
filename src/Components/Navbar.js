@@ -12,6 +12,8 @@ function Navbar() {
   const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const deliveryCost = 29;
+  const currency = "kr.";
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -55,16 +57,20 @@ function Navbar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
+                <i class="fas fa-user"></i>
+                <br />
                 Log ind
               </Link>
             </li>
             <li>
               <Link
-                to="/sign-up"
+                to="/cart"
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                Kurv <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <br />
+                {cart != 0 && totalPrice + deliveryCost + currency}
               </Link>
             </li>
           </ul>
@@ -77,7 +83,9 @@ function Navbar() {
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}
-              {cart.length} <i class="fas fa-shopping-cart"></i> {totalPrice},-
+              {cart != 0 && cart.length}
+              <i class="fas fa-shopping-cart"></i>{" "}
+              {cart != 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
           )}
         </div>
