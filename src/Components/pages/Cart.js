@@ -1,11 +1,4 @@
-import React from "react";
-import CartShow from "../CartShow";
 function Cart() {
-  return (
-    <>
-      <CartShow></CartShow>
-    </>
-  );
+  return <></>;
 }
-
 export default Cart;

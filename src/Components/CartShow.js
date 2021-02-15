@@ -1,11 +1,7 @@
 import React from "react";
 
-function CartShow() {
-  return (
-    <div>
-      <h1>test</h1>
-    </div>
-  );
+function CartShow(props) {
+  return <div>{props.text}</div>;
 }
 
 export default CartShow;

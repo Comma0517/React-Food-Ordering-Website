@@ -3,10 +3,13 @@ import React, { useState } from "react";
 function CardItem(props) {
   const [cart, setCart] = useState([]);
   const addToCart = () => {};
+  const deleteCard = () => {};
+
   return (
     <>
       <li className="cards__item">
         <div className="cards__item__link">
+          <button onClick={deleteCard}>Delete</button>
           <figure className="cards__item__pic-wrap" data-category={props.label}>
             <img
               className="cards__item__img"

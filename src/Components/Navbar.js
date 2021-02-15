@@ -75,7 +75,7 @@ function Navbar() {
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}
-              <i class="fas fa-shopping-cart"></i>
+              0 <i class="fas fa-shopping-cart"></i>
             </ButtonCart>
           )}
         </div>
