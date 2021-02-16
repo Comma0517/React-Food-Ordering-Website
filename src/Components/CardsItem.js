@@ -5,7 +5,11 @@ function CardItem(props) {
   const [cart, setCart] = useContext(CartContext);
 
   function addToCart() {
-    const foodItem = { name: props.text, price: props.price };
+    const foodItem = {
+      name: props.text,
+      price: props.price,
+      id: Math.random().toString(36).substr(2, 9),
+    };
     setCart((currentState) => [...currentState, foodItem]);
   }
 
@@ -28,9 +32,15 @@ function CardItem(props) {
             <p className="cards_item_amountLeft">
               Der er {props.amountLeft} tilbage af denne ret
             </p>
-            <button onClick={addToCart} className="cards__item_button">
-              <i class="fas fa-plus"></i>
-            </button>
+            <div>
+              <button onClick={addToCart} className="cards__item_button">
+                <i class="fas fa-plus"></i>
+              </button>
+
+              <span className="cards__item_button_remove">
+                <i class="fas fa-trash fa-3x"></i>
+              </span>
+            </div>
           </div>
         </div>
       </li>
