@@ -4,7 +4,7 @@ import "firebase/storage";
 import "firebase/firestore";
 
 const app = firebase.initializeApp({
-  apiKey: "AIzaSyCHjt848EyLvwT4yu - V9ArNBC939iyJG4I",
+  apiKey: "AIzaSyARddkCJ3a2izQcbiGB34zsAHy0YiCu_oA",
   authDomain: process.env.REACT_APP_FIREASE_AUTH_DOMAIN,
   projectId: process.env.REACT_APP_FIREASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREASE_STORAGE_BUCKET,
