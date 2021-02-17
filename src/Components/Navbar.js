@@ -43,7 +43,7 @@ function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link
-                to="/products"
+                to="/AboutUs"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >

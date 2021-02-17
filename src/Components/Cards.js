@@ -23,7 +23,6 @@ const Cards = ({}) => {
                 label={doc.imageLabel}
                 price={doc.price}
                 id={doc.id}
-                layout
               ></CardItem>
             ))}
         </div>

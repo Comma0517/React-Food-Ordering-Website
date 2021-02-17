@@ -112,9 +112,7 @@ h1 {
   border: none;
 }
 .cards__item_button:hover {
-  background-color: #4caf50;
-
-  color: black;
+  background-color: var(--clr-primary-4);
 }
 .cards__item_button_remove {
   float: right;

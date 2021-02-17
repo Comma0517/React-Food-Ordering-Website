@@ -4,12 +4,13 @@ import Navbar from "./Components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/pages/Home";
 import Services from "./Components/pages/Services";
-import Products from "./Components/pages/Products";
+import AboutUs from "./Components/pages/AboutUs";
 import SignUp from "./Components/pages/Signup";
 import Login from "./Components/Login";
 import Cart from "./Components/pages/Cart";
 import { AuthProvider } from "./Components/AuthContext";
 import { CartProvider } from "./Components/CartContext";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <>
@@ -18,8 +19,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/services" exact component={Services} />
-            <Route path="/products" exact component={Products} />
+            <Route path="/AboutUs" exact component={AboutUs} />
             <AuthProvider>
               <Route path="/Sign-up" exact component={SignUp} />
               <Route path="/login" exact component={Login} />
@@ -27,6 +27,7 @@ function App() {
             </AuthProvider>
           </Switch>
         </CartProvider>
+        <Footer />
       </Router>
     </>
   );
