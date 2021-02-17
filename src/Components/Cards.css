@@ -42,7 +42,8 @@ h1 {
   overflow: hidden;
   text-decoration: none;
 }
-.cards__item__remove {
+.cards__item_button_remove {
+  margin-top: 30px;
 }
 
 .cards__item__pic-wrap {

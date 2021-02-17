@@ -19,6 +19,7 @@
   padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
+  position: relative;
 }
 
 .summary__title {
@@ -63,7 +64,7 @@
 }
 .cartItem {
   margin-bottom: 1rem;
-  display: flex;
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
 }
@@ -121,22 +122,18 @@
 .actions__deleteItemBtn {
   width: 50px;
   height: 50px;
-  border: 1px solid var(--secondary-color);
+  float: right;
   border-radius: 50%;
   cursor: pointer;
   transition: all ease-in-out 0.7s;
   outline: none;
+  color: tomato;
 }
 
 .actions__deleteItemBtn:hover {
-  transform: scale(1.2) rotate(360deg);
-  background-color: rgb(209, 15, 15);
+  transform: scale(1) rotate(360deg);
 }
 
-.actions__deleteItemBtn img {
-  width: 25px;
-  height: 25px;
-}
 .removeButton {
   color: tomato;
 }

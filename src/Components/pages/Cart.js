@@ -7,7 +7,7 @@ import "./Cart.css";
 
 function Cart() {
   const [cart, setCart] = useContext(CartContext);
-  const [totalPrice1, setTotalPrice] = useState(0);
+
   const deliveryCost = 29;
   const totalPrice =
     cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
@@ -21,30 +21,37 @@ function Cart() {
     <>
       <div className="cart">
         <div className="cart__items">
-          <h1>Ordre:</h1>
-          <div></div>
           {cart.length === 0 && <h1>Din kurv er tom</h1>}
-          {cart &&
-            cart.map((doc) => (
-              <li>
-                {doc.name} {doc.price} kr.{" "}
-                <span
-                  className="removeButton"
-                  onClick={() => removeFromOrder(doc.id)}
-                >
-                  <i class="fas fa-trash fa-1x"></i>
-                </span>
-              </li>
-            ))}
+          <div className="cartItem">
+            <div className=""></div>
+
+            {cart &&
+              cart.map((doc) => (
+                <li className="cartItem__details">
+                  <p>
+                    {doc.name}{" "}
+                    <span
+                      onClick={() => removeFromOrder(doc.id)}
+                      className="actions__deleteItemBtn"
+                    >
+                      <i class="fas fa-trash fa-2x"></i>
+                    </span>{" "}
+                    <p className="">{doc.price}kr. </p>
+                  </p>
+
+                  <span className="removeButton"></span>
+                </li>
+              ))}
+          </div>
         </div>
         <div className="cart__summary">
           <h4 className="summary__title">Kurv</h4>
           {cart.length != 0 && <p>Levering {deliveryCost} kr.</p>}
 
           <div className="summary__price">
-            <span>TOTAL: ({cart.length} retter)</span>
+            <span>TOTAL: </span>
 
-            <span>{totalPrice} kr.</span>
+            {cart.length != 0 && <span>{totalPrice} kr.</span>}
           </div>
           <button className="summary__checkoutBtn">Køb</button>
         </div>

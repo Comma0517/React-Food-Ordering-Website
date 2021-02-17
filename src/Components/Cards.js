@@ -22,6 +22,7 @@ const Cards = ({}) => {
                 amountLeft={doc.amountLeft}
                 label={doc.imageLabel}
                 price={doc.price}
+                id={doc.id}
                 layout
               ></CardItem>
             ))}

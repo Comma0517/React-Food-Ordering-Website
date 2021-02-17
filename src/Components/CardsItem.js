@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "./CartContext";
+import { projectFirestore } from "../Firebase";
 
 function CardItem(props) {
   const [cart, setCart] = useContext(CartContext);
@@ -12,6 +13,9 @@ function CardItem(props) {
     };
     setCart((currentState) => [...currentState, foodItem]);
   }
+  const removeCard = (e) => {
+    projectFirestore.collection("images").doc(props.id).delete();
+  };
 
   return (
     <>
@@ -37,8 +41,8 @@ function CardItem(props) {
                 <i class="fas fa-plus"></i>
               </button>
 
-              <span className="cards__item_button_remove">
-                <i class="fas fa-trash fa-3x"></i>
+              <span onClick={removeCard} className="cards__item_button_remove">
+                <i class="fas fa-trash fa-2x"></i>
               </span>
             </div>
           </div>
