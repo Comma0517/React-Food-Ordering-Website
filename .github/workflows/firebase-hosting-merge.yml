@@ -14,8 +14,8 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AUTH_DEVELOPMENT_EB42F }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAVE_A_MEAL }}'
           channelId: live
-          projectId: auth-development-eb42f
+          projectId: save-a-meal
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
