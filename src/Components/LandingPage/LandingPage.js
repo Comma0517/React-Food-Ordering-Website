@@ -14,7 +14,7 @@ function LandingPage() {
         <HeroItems>
           <HeroH1>Bæredygtig mad</HeroH1>
           <HeroP>Leveret lige til døren</HeroP>
-          <HeroBtn>Menu</HeroBtn>
+          <HeroBtn>Se menuen</HeroBtn>
         </HeroItems>
       </HeroContent>
     </HeroContainer>
