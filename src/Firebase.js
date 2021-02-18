@@ -5,11 +5,11 @@ import "firebase/firestore";
 
 const app = firebase.initializeApp({
   apiKey: "AIzaSyARddkCJ3a2izQcbiGB34zsAHy0YiCu_oA",
-  authDomain: process.env.REACT_APP_FIREASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREASE_APP_ID,
+  authDomain: "save-a-meal.firebaseapp.com",
+  projectId: "save-a-meal",
+  storageBucket: "save-a-meal.appspot.com",
+  messagingSenderId: "865077099966",
+  appId: "865077099966:web:11a890d27eae9418810def",
 });
 
 const projectStorage = firebase.storage();
