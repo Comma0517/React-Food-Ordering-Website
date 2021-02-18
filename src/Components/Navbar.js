@@ -71,7 +71,7 @@ function Navbar() {
               >
                 <i class="fas fa-shopping-cart"></i>
                 <br />
-                {cart !== 0 && totalPrice + deliveryCost + currency}
+                {cart != 0 && totalPrice + deliveryCost + currency}
               </Link>
             </li>
           </ul>
@@ -84,9 +84,9 @@ function Navbar() {
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}
-              {cart !== 0 && cart.length}
+              {cart != 0 && cart.length}
               <i class="fas fa-shopping-cart"></i>{" "}
-              {cart !== 0 && totalPrice + deliveryCost + currency}
+              {cart != 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
           )}
         </div>
