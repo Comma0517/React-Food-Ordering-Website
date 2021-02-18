@@ -53,7 +53,7 @@ function Footer() {
               <i class="fas fa-utensils" />
             </Link>
           </div>
-          <small class="website-rights">Martin Lykke © 2021</small>
+          <small class="website-rights">Martin H. Lykke © 2021</small>
           <small class="website-rights">
             Made with <i class="fab fa-react"></i>
           </small>

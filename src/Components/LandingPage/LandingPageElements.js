@@ -25,7 +25,7 @@ export const HeroItems = styled.div`
   padding: 0 2rem;
   width: 650px;
   color: #fff;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   line-height: 1;
   font-weight: bold;
 
