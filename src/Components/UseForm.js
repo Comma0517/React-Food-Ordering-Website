@@ -6,7 +6,7 @@ const useForm = (callback, validate) => {
     password: "",
     password2: "",
   });
-
+  // eslint-disable-next-line
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { signup } = useAuth();
   const [error, setError] = useState("");

@@ -8,6 +8,7 @@ import { CartContext } from "./CartContext";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
   const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
   const handleClick = () => setClick(!click);
@@ -70,7 +71,7 @@ function Navbar() {
               >
                 <i class="fas fa-shopping-cart"></i>
                 <br />
-                {cart != 0 && totalPrice + deliveryCost + currency}
+                {cart !== 0 && totalPrice + deliveryCost + currency}
               </Link>
             </li>
           </ul>
@@ -83,9 +84,9 @@ function Navbar() {
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}
-              {cart != 0 && cart.length}
+              {cart !== 0 && cart.length}
               <i class="fas fa-shopping-cart"></i>{" "}
-              {cart != 0 && totalPrice + deliveryCost + currency}
+              {cart !== 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
           )}
         </div>

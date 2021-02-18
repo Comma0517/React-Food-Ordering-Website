@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { projectStorage, projectFirestore, timestamp } from "../Firebase";
-
+// eslint-disable-next-line
 const useStorage = (file, imageText, amountLeft, imageLabel, price) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
@@ -23,6 +23,7 @@ const useStorage = (file, imageText, amountLeft, imageLabel, price) => {
         const url = await storageRef.getDownloadURL();
         const createdAt = timestamp();
         //  const text = imageText;
+        // eslint-disable-next-line
         await collectionRef.add({
           url,
           createdAt,

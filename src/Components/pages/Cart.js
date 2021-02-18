@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
 
 import "./Cart.css";
@@ -6,6 +6,7 @@ import "./Cart.css";
 //import CartItem from "../Cart/CartItem";
 
 function Cart() {
+  // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
 
   const deliveryCost = 29;
@@ -46,12 +47,12 @@ function Cart() {
         </div>
         <div className="cart__summary">
           <h4 className="summary__title">Kurv</h4>
-          {cart.length != 0 && <p>Levering {deliveryCost} kr.</p>}
+          {cart.length !== 0 && <p>Levering {deliveryCost} kr.</p>}
 
           <div className="summary__price">
             <span>TOTAL: </span>
 
-            {cart.length != 0 && <span>{totalPrice} kr.</span>}
+            {cart.length !== 0 && <span>{totalPrice} kr.</span>}
           </div>
           <button className="summary__checkoutBtn">Køb</button>
         </div>

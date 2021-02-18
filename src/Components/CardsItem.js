@@ -1,8 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { projectFirestore } from "../Firebase";
 
 function CardItem(props) {
+  // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
 
   function addToCart() {
@@ -22,11 +23,7 @@ function CardItem(props) {
       <li className="cards__item">
         <div className="cards__item__link">
           <figure className="cards__item__pic-wrap" data-category={props.label}>
-            <img
-              className="cards__item__img"
-              alt="Food Image"
-              src={props.src}
-            />
+            <img className="cards__item__img" alt="Food" src={props.src} />
           </figure>
           <div className="cards__item__info">
             <h4 className="cards__item__text">

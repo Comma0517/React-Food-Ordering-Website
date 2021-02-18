@@ -53,7 +53,7 @@ function Footer() {
               <i class="fas fa-utensils" />
             </Link>
           </div>
-          <small class="website-rights">Martin H. Lykke © 2021</small>
+          <small class="website-rights">Martin Lykke © 2021</small>
           <small class="website-rights">
             Made with <i class="fab fa-react"></i>
           </small>
@@ -62,6 +62,7 @@ function Footer() {
               class="social-icon-link facebook"
               href={link}
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Facebook"
             >
               <i class="fab fa-facebook-f" />
@@ -70,6 +71,7 @@ function Footer() {
               class="social-icon-link instagram"
               href={link}
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Instagram"
             >
               <i class="fab fa-instagram" />
@@ -78,6 +80,7 @@ function Footer() {
               class="social-icon-link youtube"
               href={link}
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Youtube"
             >
               <i class="fab fa-youtube" />
@@ -86,12 +89,18 @@ function Footer() {
               class="social-icon-link twitter"
               href={link}
               target="_blank"
+              rel="noopener noreferrer"
               aria-label="Twitter"
             >
               <i class="fab fa-twitter" />
             </a>
 
-            <a class="social-icon-link" target="_blank" href={link}>
+            <a
+              class="social-icon-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={link}
+            >
               <i class="fab fa-linkedin" />
             </a>
           </div>

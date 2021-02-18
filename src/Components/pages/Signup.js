@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import FormSuccess from "../FormSuccess";
 import SignupForm from "../SignupForm";
 import "./Signup.css";
 
 function Signup() {
+  // eslint-disable-next-line
   const [isSubmitted, setIsSubmitted] = useState(false);
   function submitForm() {
     setIsSubmitted(true);
