@@ -8,11 +8,10 @@ const Cards = () => {
 
   return (
     <div className="cards">
-      <h1>Dagens retter</h1>
-
       <UploadForm></UploadForm>
+      <h1>Dagens retter</h1>
       <div className="cards__container">
-        <div class="menu" className="cards__wrapper">
+        <div className="cards__wrapper">
           {docs &&
             docs.map((doc) => (
               <CardItem
