@@ -12,7 +12,7 @@ const Cards = () => {
 
       <UploadForm></UploadForm>
       <div className="cards__container">
-        <div className="cards__wrapper">
+        <div class="menu" className="cards__wrapper">
           {docs &&
             docs.map((doc) => (
               <CardItem
