@@ -55,7 +55,7 @@ function Footer() {
           </div>
           <small class="website-rights">Martin Lykke © 2021</small>
           <small class="website-rights">
-            Made with <i class="fab fa-react"></i>
+            Made with React <i class="fab fa-react"></i>
           </small>
           <div class="social-icons">
             <a
