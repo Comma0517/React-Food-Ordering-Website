@@ -1,32 +1,31 @@
 .cart {
-  margin: 2rem auto;
-  width: 1100px;
-  display: flex;
-  justify-content: space-between;
+  padding: 4rem;
+  background: #fff;
 }
 
 .cart__items {
-  flex: 0.7;
   margin-right: 1rem;
+  max-width: 500px;
+  position: relative;
+  flex-flow: column;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .cart__summary {
-  height: 250px;
-  flex: 0.3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 10px;
-  position: relative;
+  padding: 4rem;
+  background: #fff;
 }
 
 .summary__title {
   font-size: 1.2rem;
   font-weight: bold;
 }
-
+.cart__empy {
+  margin-bottom: 700px;
+}
 .summary__price {
   display: flex;
   align-items: center;
@@ -47,7 +46,7 @@
   padding: 10px 17px;
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
-  background: black;
+  background: var(--clr-primary-4);
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
@@ -119,25 +118,34 @@
   outline: none;
 }
 
-.actions__deleteItemBtn {
+.deleteItemBtn {
+  color: tomato;
   width: 50px;
   height: 50px;
   float: right;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all ease-in-out 0.7s;
   outline: none;
-  color: tomato;
 }
-
-.actions__deleteItemBtn:hover {
-  transform: scale(1) rotate(360deg);
-}
-
-.removeButton {
-  color: tomato;
-}
-.removeButton:hover {
+.deleteItemBtn:hover {
   color: red;
   cursor: pointer;
+}
+.cart__summary__container {
+  flex-flow: column;
+  align-items: center;
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+}
+.cart__summary__wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+  height: 200px;
+  flex: 0.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 10px;
+  max-width: 400px;
 }

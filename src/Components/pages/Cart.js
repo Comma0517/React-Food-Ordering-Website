@@ -22,10 +22,8 @@ function Cart() {
     <>
       <div className="cart">
         <div className="cart__items">
-          {cart.length === 0 && <h1>Din kurv er tom</h1>}
+          {cart.length === 0 && <h1 className="cart__empy">Din kurv er tom</h1>}
           <div className="cartItem">
-            <div className=""></div>
-
             {cart &&
               cart.map((doc) => (
                 <li className="cartItem__details">
@@ -33,7 +31,7 @@ function Cart() {
                     {doc.name}{" "}
                     <span
                       onClick={() => removeFromOrder(doc.id)}
-                      className="actions__deleteItemBtn"
+                      className="deleteItemBtn"
                     >
                       <i class="fas fa-trash fa-2x"></i>
                     </span>{" "}
@@ -45,17 +43,23 @@ function Cart() {
               ))}
           </div>
         </div>
-        <div className="cart__summary">
-          <h4 className="summary__title">Kurv</h4>
-          {cart.length !== 0 && <p>Levering {deliveryCost} kr.</p>}
+        {cart.length != 0 && (
+          <div className="cart__summary">
+            <div className="cart__summary__container">
+              <div className="cart__summary__wrapper">
+                <h4 className="summary__title">Kurv</h4>
+                {cart.length !== 0 && <p>Levering {deliveryCost} kr.</p>}
 
-          <div className="summary__price">
-            <span>TOTAL: </span>
+                <div className="summary__price">
+                  <span>TOTAL: </span>
 
-            {cart.length !== 0 && <span>{totalPrice} kr.</span>}
+                  {cart.length !== 0 && <span>{totalPrice} kr.</span>}
+                </div>
+                <button className="summary__checkoutBtn">Køb</button>
+              </div>
+            </div>
           </div>
-          <button className="summary__checkoutBtn">Køb</button>
-        </div>
+        )}
       </div>
     </>
   );
