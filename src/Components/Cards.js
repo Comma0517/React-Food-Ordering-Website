@@ -7,11 +7,11 @@ import { useAuth } from "./AuthContext";
 const Cards = () => {
   const { docs } = useFirestore("images");
   const { currentUser, logout } = useAuth();
+  var userIsAdmin = false;
 
   return (
     <div className="cards">
-      {currentUser.email === "admin@gmail.com" && <UploadForm></UploadForm>}
-
+      <UploadForm></UploadForm>
       <h1>Dagens retter</h1>
       <div className="cards__container">
         <div className="cards__wrapper">

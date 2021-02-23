@@ -10,7 +10,6 @@ function Cart() {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
   const { currentUser, logout } = useAuth();
-
   const deliveryCost = 29;
   const totalPrice =
     cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
@@ -24,7 +23,7 @@ function Cart() {
     <>
       <div className="cart">
         <div className="cart__items">
-          <h1>Logget ind med {currentUser.email}</h1>
+          <h1>Logget ind med </h1>
           {cart.length === 0 && <h1 className="cart__empy">Din kurv er tom</h1>}
           <div className="cartItem">
             {cart &&
