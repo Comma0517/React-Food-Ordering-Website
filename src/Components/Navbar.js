@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Button } from "./Button";
 import { ButtonCart } from "./ButtonCart";
+import { ButtonProfile } from "./ButtonProfile";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
-import { useAuth } from "./AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const [buttonText, setButtonText] = useState("Log ind");
   // eslint-disable-next-line
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -76,12 +77,18 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {button && (
+          {!localStorage.getItem("loginEmail") && button && (
             <Button buttonStyle="btn--outline">
               {" "}
-              <i class="fas fa-user"></i> Log ind
+              <i class="fas fa-user"></i> {buttonText}
             </Button>
           )}
+          {localStorage.getItem("loginEmail") && button && (
+            <ButtonProfile buttonStyle="btn--outline">
+              {localStorage.getItem("loginEmail")}
+            </ButtonProfile>
+          )}
+
           {button && (
             <ButtonCart buttonStyle="btn--outline">
               {" "}

@@ -23,7 +23,7 @@ function Cart() {
       <div className="cart">
         <div className="cart__items">
           {localStorage.getItem("loginEmail") && (
-            <h1>Logget ind som {localStorage.getItem("loginEmail")} </h1>
+            <h1>Logget ind som {localStorage.getItem("loginEmail")}</h1>
           )}
 
           {cart.length === 0 && <h1 className="cart__empy">Din kurv er tom</h1>}

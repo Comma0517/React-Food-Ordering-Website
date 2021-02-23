@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { projectFirestore } from "../Firebase";
-import { useAuth } from "./AuthContext";
 
 function CardItem(props) {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
-  const { currentUser, logout } = useAuth();
 
   function addToCart() {
     const foodItem = {
