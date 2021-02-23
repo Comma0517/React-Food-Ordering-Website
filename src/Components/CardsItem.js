@@ -39,10 +39,14 @@ function CardItem(props) {
               <button onClick={addToCart} className="cards__item_button">
                 <i class="fas fa-plus"></i>
               </button>
-
-              <span onClick={removeCard} className="cards__item_button_remove">
-                <i class="fas fa-trash fa-2x"></i>
-              </span>
+              {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
+                <span
+                  onClick={removeCard}
+                  className="cards__item_button_remove"
+                >
+                  <i class="fas fa-trash fa-2x"></i>
+                </span>
+              )}
             </div>
           </div>
         </div>

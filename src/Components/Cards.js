@@ -11,7 +11,10 @@ const Cards = () => {
 
   return (
     <div className="cards">
-      <UploadForm></UploadForm>
+      {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
+        <UploadForm />
+      )}
+
       <h1>Dagens retter</h1>
       <div className="cards__container">
         <div className="cards__wrapper">
