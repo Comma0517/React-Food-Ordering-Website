@@ -49,12 +49,12 @@ export default function Login() {
             <div className="w-100 text-center mt-3">
               <Link to="/forgot-password">Forgot Password?</Link>
             </div>
+            <div className="w-100 text-center mt-2">
+              Need an account? <Link to="/sign-up">Sign Up</Link>
+            </div>
           </Card.Body>
         </div>
       </Card>
-      <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/sign-up">Sign Up</Link>
-      </div>
     </>
   );
 }

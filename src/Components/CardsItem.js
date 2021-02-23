@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { projectFirestore } from "../Firebase";
+import { useAuth } from "./AuthContext";
 
 function CardItem(props) {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
+  const { currentUser, logout } = useAuth();
 
   function addToCart() {
     const foodItem = {
@@ -37,10 +39,14 @@ function CardItem(props) {
               <button onClick={addToCart} className="cards__item_button">
                 <i class="fas fa-plus"></i>
               </button>
-
-              <span onClick={removeCard} className="cards__item_button_remove">
-                <i class="fas fa-trash fa-2x"></i>
-              </span>
+              {currentUser.email === "admin@gmail.com" && (
+                <span
+                  onClick={removeCard}
+                  className="cards__item_button_remove"
+                >
+                  <i class="fas fa-trash fa-2x"></i>
+                </span>
+              )}
             </div>
           </div>
         </div>

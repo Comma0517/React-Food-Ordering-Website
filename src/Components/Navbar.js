@@ -4,6 +4,7 @@ import { ButtonCart } from "./ButtonCart";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
+import { useAuth } from "./AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);

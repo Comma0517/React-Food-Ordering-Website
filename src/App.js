@@ -18,9 +18,10 @@ function App() {
         <CartProvider>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/AboutUs" exact component={AboutUs} />
             <AuthProvider>
+              <Route path="/" exact component={Home} />
+              <Route path="/AboutUs" exact component={AboutUs} />
+
               <Route path="/Sign-up" exact component={SignUp} />
               <Route path="/login" exact component={Login} />
 
