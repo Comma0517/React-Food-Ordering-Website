@@ -10,6 +10,7 @@ import Cart from "./Components/pages/Cart";
 import { AuthProvider } from "./Components/AuthContext";
 import { CartProvider } from "./Components/CartContext";
 import Footer from "./Components/Footer";
+
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
             <AuthProvider>
               <Route path="/Sign-up" exact component={SignUp} />
               <Route path="/login" exact component={Login} />
+
               <Route path="/cart" exact component={Cart} />
             </AuthProvider>
           </Switch>

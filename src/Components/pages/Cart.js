@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
+import { useAuth } from "../AuthContext";
 
 import "./Cart.css";
 
@@ -8,6 +9,7 @@ import "./Cart.css";
 function Cart() {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
+  const { currentUser, logout } = useAuth();
 
   const deliveryCost = 29;
   const totalPrice =
@@ -22,6 +24,7 @@ function Cart() {
     <>
       <div className="cart">
         <div className="cart__items">
+          <h1>Logget ind med {currentUser.email}</h1>
           {cart.length === 0 && <h1 className="cart__empy">Din kurv er tom</h1>}
           <div className="cartItem">
             {cart &&

@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "./AuthContext";
 import { Link, useHistory } from "react-router-dom";
-
+import "./Form.css";
 export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -18,7 +18,7 @@ export default function Login() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/");
+      history.push("/cart");
     } catch {
       setError("Failed to log in");
     }
@@ -53,7 +53,7 @@ export default function Login() {
         </div>
       </Card>
       <div className="w-100 text-center mt-2">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        Need an account? <Link to="/sign-up">Sign Up</Link>
       </div>
     </>
   );

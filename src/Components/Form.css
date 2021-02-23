@@ -55,11 +55,16 @@
   margin-top: 80px;
   color: #fff;
 }
-
+.alreadyhaveaccount {
+}
 .form-content-right {
   border-radius: 0 10px 10px 0;
   position: relative;
-  background: linear-gradient(90deg, rgb(40, 40, 40) 0%, rgb(17, 17, 17) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(106, 189, 245) 0%,
+    rgb(20, 138, 216) 100%
+  );
 }
 
 .form {
@@ -74,7 +79,12 @@
   justify-content: center;
   align-items: center;
 }
-
+.signupheader {
+  color: white;
+}
+.loginlink {
+  color: black !important;
+}
 .form h1 {
   font-size: 1rem;
   text-align: start;
@@ -123,8 +133,8 @@
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    rgb(39, 176, 255) 0%,
-    rgb(0, 232, 236) 100%
+    rgb(0, 162, 255) 0%,
+    rgb(17, 105, 219) 100%
   );
   outline: none;
   border: none;

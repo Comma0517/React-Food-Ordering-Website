@@ -1,6 +1,6 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import useForm from "./UseForm";
 import "./Form.css";
 
@@ -51,7 +51,10 @@ const FormSignup = ({ submitForm }) => {
           Sign up
         </button>
         <span className="form-input-login">
-          Har du allerede en konto? <a href="/login">Log ind </a>
+          Har du allerede en konto?{" "}
+          <Link className="loginlink" to="/login">
+            Log ind{" "}
+          </Link>
         </span>
       </form>
     </div>
