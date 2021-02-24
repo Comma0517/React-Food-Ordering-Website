@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/pages/Home";
 import AboutUs from "./Components/pages/AboutUs";
 import SignUp from "./Components/pages/Signup";
+import Profile from "./Components/pages/Profile";
 import Login from "./Components/Login";
 import Cart from "./Components/pages/Cart";
 import { AuthProvider } from "./Components/AuthContext";
@@ -21,10 +22,9 @@ function App() {
             <AuthProvider>
               <Route path="/" exact component={Home} />
               <Route path="/AboutUs" exact component={AboutUs} />
-
               <Route path="/Sign-up" exact component={SignUp} />
               <Route path="/login" exact component={Login} />
-
+              <Route path="/profile" exact component={Profile} />
               <Route path="/cart" exact component={Cart} />
             </AuthProvider>
           </Switch>

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { CartContext } from "../CartContext";
-import { useAuth } from "../AuthContext";
 
 import "./Cart.css";
 
