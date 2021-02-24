@@ -11,6 +11,7 @@ import Cart from "./Components/pages/Cart";
 import { AuthProvider } from "./Components/AuthContext";
 import { CartProvider } from "./Components/CartContext";
 import Footer from "./Components/Footer";
+import PrivateRoute from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
               <Route path="/AboutUs" exact component={AboutUs} />
               <Route path="/Sign-up" exact component={SignUp} />
               <Route path="/login" exact component={Login} />
-              <Route path="/profile" exact component={Profile} />
+              <PrivateRoute path="/profile" exact component={Profile} />
               <Route path="/cart" exact component={Cart} />
             </AuthProvider>
           </Switch>
