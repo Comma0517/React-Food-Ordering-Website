@@ -5,6 +5,7 @@ import { ButtonProfile } from "./ButtonProfile";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
+import { useAuth } from "./AuthContext";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -17,6 +18,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
   const deliveryCost = 29;
   const currency = "kr.";
+  const { currentUser } = useAuth();
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -85,7 +87,7 @@ function Navbar() {
           )}
           {localStorage.getItem("loginEmail") && button && (
             <ButtonProfile buttonStyle="btn--outline">
-              {localStorage.getItem("loginEmail")}
+              {currentUser && currentUser.email}
             </ButtonProfile>
           )}
 

@@ -11,6 +11,7 @@ export default function Profile() {
 
     try {
       await logout();
+      localStorage.removeItem("loginEmail");
       history.push("/login");
     } catch {
       setError("Failed to log out");

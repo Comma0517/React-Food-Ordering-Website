@@ -20,7 +20,6 @@ export default function Login() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       localStorage.setItem("loginEmail", emailRef.current.value);
-
       history.push("/cart");
     } catch {
       setError("Failed to log in");

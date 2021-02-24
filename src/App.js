@@ -18,9 +18,9 @@ function App() {
     <>
       <Router>
         <CartProvider>
-          <Navbar />
           <Switch>
             <AuthProvider>
+              <Navbar />
               <Route path="/" exact component={Home} />
               <Route path="/AboutUs" exact component={AboutUs} />
               <Route path="/Sign-up" exact component={SignUp} />
