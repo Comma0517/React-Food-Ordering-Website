@@ -3,7 +3,7 @@
 }
 .form-container {
   margin: 100px auto;
-  width: 500px;
+  max-width: 500px;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   border-radius: 10px;
@@ -55,8 +55,7 @@
   margin-top: 80px;
   color: #fff;
 }
-.alreadyhaveaccount {
-}
+
 .form-content-right {
   border-radius: 0 10px 10px 0;
   position: relative;
@@ -79,14 +78,12 @@
   justify-content: center;
   align-items: center;
 }
-.signupheader {
-  color: white;
-}
+
 .loginlink {
   color: black !important;
 }
 .form h1 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: start;
   width: 80%;
   margin-bottom: 1rem;
