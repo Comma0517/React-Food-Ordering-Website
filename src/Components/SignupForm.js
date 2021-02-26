@@ -29,9 +29,11 @@ const FormSignup = ({ submitForm }) => {
           <label className="form-label">Password</label>
           <input
             className="form-input"
+            id="password"
             type="password"
             name="password"
             placeholder="Enter your password"
+            autocomplete="new-password"
             value={values.password}
             onChange={handleChange}
           />
@@ -43,6 +45,7 @@ const FormSignup = ({ submitForm }) => {
             type="password"
             name="password2"
             placeholder="Confirm your password"
+            autocomplete="new-password"
             value={values.password2}
             onChange={handleChange}
           />

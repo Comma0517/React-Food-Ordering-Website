@@ -42,6 +42,7 @@ export default function Login() {
               <input
                 className="form-input"
                 type="email"
+                name="email"
                 ref={emailRef}
                 required
                 placeholder="Enter your email"
@@ -51,7 +52,9 @@ export default function Login() {
               <label className="form-label">Password</label>
               <input
                 className="form-input"
-                type="password"
+                type="current-password"
+                name="current-password"
+                autocomplete="current-password"
                 ref={passwordRef}
                 required
                 placeholder="Enter your password"

@@ -130,7 +130,7 @@
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    rgb(0, 162, 255) 0%,
+    rgb(100, 154, 255) 0%,
     rgb(17, 105, 219) 100%
   );
   outline: none;
@@ -143,10 +143,12 @@
   cursor: pointer;
   background: linear-gradient(
     90deg,
-    rgb(39, 143, 255) 0%,
-    rgb(12, 99, 250) 100%
+    rgb(255, 255, 255) 0%,
+    rgb(255, 255, 255) 100%
   );
-  transition: all 0.4s ease-out;
+  color: var(--clr-primary-4);
+
+  border: 2px solid var(--clr-primary-4);
 }
 
 .form-input-login {
