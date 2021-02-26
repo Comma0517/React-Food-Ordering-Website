@@ -52,8 +52,8 @@ export default function Login() {
               <label className="form-label">Password</label>
               <input
                 className="form-input"
-                type="current-password"
-                name="current-password"
+                type="password"
+                name="password"
                 autocomplete="current-password"
                 ref={passwordRef}
                 required
