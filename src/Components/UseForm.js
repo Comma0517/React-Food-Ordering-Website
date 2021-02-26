@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useAuth } from "../Components/AuthContext";
+import { useHistory } from "react-router-dom";
+
 const useForm = (callback, validate) => {
+  const history = useHistory();
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -32,6 +36,7 @@ const useForm = (callback, validate) => {
       await signup(values.email, values.password);
 
       setIsSubmitting(true);
+      history.push("/login");
     } catch {
       setError("Failed to create an account");
     }
