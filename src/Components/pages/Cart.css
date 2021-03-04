@@ -24,7 +24,6 @@
   font-weight: bold;
 }
 .cart__empy {
-  margin-bottom: 700px;
 }
 .summary__price {
   display: flex;
@@ -148,4 +147,28 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
   max-width: 400px;
+}
+.goToMenuBtn {
+  color: white;
+  font-size: 1.5rem;
+  background-color: var(--clr-primary-4);
+  height: 100px;
+  width: 175px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 1rem;
+  margin: 10px;
+  margin-bottom: 25%;
+}
+.goToMenuBtn:hover {
+  background: #fff;
+  color: var(--clr-primary-4);
+  border: 2px solid var(--clr-primary-4);
+  transition-duration: 0.2s ease-out;
+}
+.center {
+  text-align: center;
+  padding: 2%;
 }

@@ -4,6 +4,7 @@ import { useAuth } from "../AuthContext";
 import { useHistory } from "react-router-dom";
 import "./Cart.css";
 import "../UploadForm.css";
+import { Link } from "react-router-dom";
 
 //import CartItem from "../Cart/CartItem";
 
@@ -25,12 +26,24 @@ function Cart() {
       history.push("/login");
     }
   }
+  function navigateToMenu() {}
 
   return (
     <>
+      {cart.length === 0 && (
+        <div>
+          <h1 className="cart__empy">
+            Din kurv er tom <i class="far fa-sad-cry"></i>
+          </h1>
+          <div className="center">
+            <Link to="/" onClick={navigateToMenu}>
+              <button className="goToMenuBtn">Gå til menu {""}</button>
+            </Link>
+          </div>
+        </div>
+      )}
       <div className="cart">
         <div className="cart__items">
-          {cart.length === 0 && <h1 className="cart__empy">Din kurv er tom</h1>}
           <div className="cartItem">
             {cart &&
               cart.map((doc) => (
@@ -79,7 +92,9 @@ function Cart() {
                     <input type="zipcode" id="zipcode" name="zipcode" />
                   </div>
                 </div>
-                <button className="summary__checkoutBtn">Køb</button>
+                <button className="summary__checkoutBtn" onClick={handleOrder}>
+                  Køb
+                </button>
               </div>
             </div>
           </div>
