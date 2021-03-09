@@ -1,4 +1,4 @@
-Project uses HTML, CSS, Bootstrap, Javascript, React, firebase firestore + authentication
+This web app is build from scratch. I used HTML, CSS, Bootstrap, Javascript, React, firebase firestore + authentication
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
