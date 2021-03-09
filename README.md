@@ -1,4 +1,5 @@
-This web app is build from scratch. I used HTML, CSS, Bootstrap, Javascript, React, firebase firestore + authentication
+The concept of the website is that users can buy food closer to expiry date for a cheaper price as well as to help reduce waste of food. The site is build from scratch. 
+I used HTML, CSS, Bootstrap, Javascript, React, firebase firestore + authentication
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
