@@ -23,7 +23,7 @@ const Cards = () => {
           <UploadForm />
         )}
 
-        <h1>Dagens retter</h1>
+        <h1 className="cards__header">Dagens retter</h1>
         <div className="cards__container">
           <div className="cards__wrapper">
             <div>

@@ -145,3 +145,14 @@ h1 {
     margin-bottom: 2rem;
   }
 }
+.cards__header {
+  margin-top: -100px;
+  background-color: var(--clr-primary-4);
+  color: white;
+  height: 70px;
+
+  -webkit-box-shadow: 6px 7px 16px -4px rgb(148 145 148);
+  -moz-box-shadow: 6px 7px 16px -4px rgba(148, 145, 148, 1);
+  box-shadow: 6px 7px 16px -4px rgb(148 145 148);
+  font-size: 3rem;
+}
