@@ -1,6 +1,6 @@
 .navbar {
   background: var(--clr-primary-4);
-  height: 60px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
