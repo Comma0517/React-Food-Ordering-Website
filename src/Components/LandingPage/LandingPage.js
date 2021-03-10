@@ -10,7 +10,7 @@ import {
 function LandingPage() {
   function navigateToMenu() {
     //window.scrollBy(0, 1400);
-    var target = document.querySelector(".cards__container");
+    var target = document.querySelector(".cards");
     var targetPosition = target.getBoundingClientRect().top;
     var startPosition = window.pageYOffset;
     var distance = targetPosition - startPosition - 100;
@@ -19,7 +19,7 @@ function LandingPage() {
     function animation(currentTime) {
       if (startTime === null) startTime = currentTime;
       var timeElapsed = currentTime - startTime;
-      var run = ease(timeElapsed, startPosition, distance, 1000);
+      var run = ease(timeElapsed, startPosition - 100, distance, 1000);
       window.scrollTo(0, run);
       if (timeElapsed < 1000) requestAnimationFrame(animation);
     }
