@@ -12,11 +12,13 @@ import { AuthProvider } from "./Components/AuthContext";
 import { CartProvider } from "./Components/CartContext";
 import Footer from "./Components/Footer";
 import PrivateRoute from "./Components/PrivateRoute";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <CartProvider>
           <Switch>
             <AuthProvider>

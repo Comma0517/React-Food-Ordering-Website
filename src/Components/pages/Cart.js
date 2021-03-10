@@ -77,24 +77,42 @@ function Cart() {
                   {cart.length !== 0 && <span>{totalPrice} kr.</span>}
                 </div>
 
-                <h1>Leveringsadresse</h1>
-                <div className="textForm">
-                  <div className="form-control">
+                <h2 className="form__title">Leveres til:</h2>
+                <div className="form__container">
+                  <div>
                     <label htmlFor="adress">Adresse : </label>
-                    <input type="address" id="address" name="address" />
+                    <input
+                      className="input__adress"
+                      type="address"
+                      id="address"
+                      name="address"
+                    />
                   </div>
-                  <div className="form-control">
+                  <div>
                     <label htmlFor="city">By : </label>
-                    <input type="city" id="city" name="city" />
+                    <input
+                      className="input__adress"
+                      type="city"
+                      id="city"
+                      name="city"
+                    />
                   </div>
-                  <div className="form-control">
+                  <div style={{ maxWidth: "100%" }}>
                     <label htmlFor="zipcode">Postnummer : </label>
-                    <input type="zipcode" id="zipcode" name="zipcode" />
+                    <input
+                      className="input__adress"
+                      type="zipcode"
+                      id="zipcode"
+                      name="zipcode"
+                    />
                   </div>
+                  <button
+                    className="summary__checkoutBtn"
+                    onClick={handleOrder}
+                  >
+                    Køb
+                  </button>
                 </div>
-                <button className="summary__checkoutBtn" onClick={handleOrder}>
-                  Køb
-                </button>
               </div>
             </div>
           </div>
