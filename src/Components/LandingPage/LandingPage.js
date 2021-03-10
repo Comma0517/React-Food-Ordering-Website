@@ -7,6 +7,7 @@ import {
   HeroP,
   HeroBtn,
 } from "./LandingPageElements";
+import ReactGA from "react-ga";
 function LandingPage() {
   function navigateToMenu() {
     //window.scrollBy(0, 1400);
@@ -30,6 +31,10 @@ function LandingPage() {
       return (-c / 2) * (t * (t - 2) - 1) + b;
     }
     requestAnimationFrame(animation);
+    ReactGA.event({
+      category: "Button",
+      action: "See menu was clicked",
+    });
   }
   return (
     <HeroContainer>

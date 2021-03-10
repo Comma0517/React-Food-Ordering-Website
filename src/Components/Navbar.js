@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
 import { useAuth } from "./AuthContext";
-
+import ReactGA from "react-ga";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -31,7 +31,12 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
-
+  function handleCartClick() {
+    ReactGA.event({
+      category: "Button",
+      action: "Cart navbar icon clicked",
+    });
+  }
   window.addEventListener("resize", showButton);
 
   return (
@@ -82,7 +87,7 @@ function Navbar() {
           )}
 
           {button && (
-            <ButtonCart buttonStyle="btn--outline">
+            <ButtonCart onClick={handleCartClick} buttonStyle="btn--outline">
               {" "}
               {cart != 0 && cart.length}
               <i class="fas fa-shopping-cart"></i>{" "}

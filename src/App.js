@@ -14,19 +14,16 @@ import Footer from "./Components/Footer";
 import PrivateRoute from "./Components/PrivateRoute";
 import ScrollToTop from "./Components/ScrollToTop";
 import ReactGA from "react-ga";
-import { createBrowserHistory } from "history";
-export const history = createBrowserHistory();
-history.listen((location) => {
-  ReactGA.pageview(location.pathname);
-});
-const App = ({ store, persistor }) => {
+
+const App = ({}) => {
   useEffect(() => {
     ReactGA.initialize("UA-191807319-1");
+    ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
   return (
     <>
-      <Router history={history}>
+      <Router>
         <ScrollToTop />
         <CartProvider>
           <Switch>

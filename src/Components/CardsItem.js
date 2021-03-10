@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { projectFirestore } from "../Firebase";
-
+import ReactGA from "react-ga";
 function CardItem(props) {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
@@ -13,6 +13,10 @@ function CardItem(props) {
       id: Math.random().toString(36).substr(2, 9),
     };
     setCart((currentState) => [...currentState, foodItem]);
+    ReactGA.event({
+      category: "Button",
+      action: "AddToCart clicked",
+    });
   }
   const removeCard = (e) => {
     projectFirestore.collection("images").doc(props.id).delete();
