@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -13,11 +13,20 @@ import { CartProvider } from "./Components/CartContext";
 import Footer from "./Components/Footer";
 import PrivateRoute from "./Components/PrivateRoute";
 import ScrollToTop from "./Components/ScrollToTop";
+import ReactGA from "react-ga";
+import { createBrowserHistory } from "history";
+export const history = createBrowserHistory();
+history.listen((location) => {
+  ReactGA.pageview(location.pathname);
+});
+const App = ({ store, persistor }) => {
+  useEffect(() => {
+    ReactGA.initialize("UA-191807319-1");
+  }, []);
 
-function App() {
   return (
     <>
-      <Router>
+      <Router history={history}>
         <ScrollToTop />
         <CartProvider>
           <Switch>
@@ -36,6 +45,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
