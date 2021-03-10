@@ -19,11 +19,10 @@ const Cards = () => {
   return (
     <>
       <div className="cards">
+        <h1 className="cards__header">Dagens retter</h1>
         {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
           <UploadForm />
         )}
-
-        <h1 className="cards__header">Dagens retter</h1>
         <div className="cards__container">
           <div className="cards__wrapper">
             <div>
