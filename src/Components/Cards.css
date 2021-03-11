@@ -156,3 +156,15 @@ h1 {
   box-shadow: 6px 7px 16px -4px rgb(148 145 148);
   font-size: 3rem;
 }
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 410px) {
+  .cards__header {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 325px) {
+  .cards__header {
+    font-size: 1.5rem;
+  }
+}
