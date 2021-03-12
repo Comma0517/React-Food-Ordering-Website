@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { projectStorage, projectFirestore, timestamp } from "../Firebase";
 // eslint-disable-next-line
-const useStorage = (file, imageText, amountLeft, imageLabel, price) => {
+const useStorage = (
+  file,
+  imageText,
+  amountLeft,
+  imageLabel,
+  price,
+  desc,
+  cat
+) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
   const [url, setUrl] = useState(null);
@@ -31,6 +39,8 @@ const useStorage = (file, imageText, amountLeft, imageLabel, price) => {
           amountLeft,
           imageLabel,
           price,
+          desc,
+          cat,
         });
         setUrl(url);
       }

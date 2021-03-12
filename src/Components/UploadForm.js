@@ -9,6 +9,8 @@ const UploadForm = () => {
   const [amountLeft, setAmountLeft] = useState(null);
   const [imageLabel, setImageLabel] = useState(null);
   const [price, setPrice] = useState(null);
+  const [desc, setDesc] = useState(null);
+  const [cat, setCat] = useState(null);
   const allowedTypes = ["image/png", "image/jpeg"];
   const changeHandler = (e) => {
     let selected = e.target.files[0];
@@ -32,7 +34,7 @@ const UploadForm = () => {
         </label>
         <div className="textForm">
           <div className="form-control">
-            <label htmlFor="imageText">Billede tekst : </label>
+            <label htmlFor="imageText">Titel : </label>
             <input
               type="text"
               id="imageText"
@@ -42,13 +44,23 @@ const UploadForm = () => {
             />
           </div>
           <div className="form-control">
-            <label htmlFor="amountLeft">Antal retter : </label>
+            <label htmlFor="desc">Beskrivelse : </label>
             <input
-              type="number"
-              id="amountLeft"
-              name="amountLeft"
-              value={amountLeft}
-              onChange={(e) => setAmountLeft(e.target.value)}
+              type="text"
+              id="desc"
+              name="desc"
+              value={desc}
+              onChange={(e) => setDesc(e.target.value)}
+            />
+          </div>
+          <div className="form-control">
+            <label htmlFor="cat">Kategori : </label>
+            <input
+              type="text"
+              id="cat"
+              name="cat"
+              value={cat}
+              onChange={(e) => setCat(e.target.value)}
             />
           </div>
           <div className="form-control">
@@ -88,6 +100,10 @@ const UploadForm = () => {
               setImageLabel={setImageLabel}
               price={price}
               setPrice={setPrice}
+              desc={desc}
+              setDesc={setDesc}
+              cat={cat}
+              setCat={setCat}
             />
           )}
         </div>

@@ -8,13 +8,17 @@ const ProgressBar = ({
   amountLeft,
   imageLabel,
   price,
+  desc,
+  cat,
 }) => {
   const { progress, url } = useStorage(
     file,
     imageText,
     amountLeft,
     imageLabel,
-    price
+    price,
+    desc,
+    cat
   );
 
   useEffect(() => {

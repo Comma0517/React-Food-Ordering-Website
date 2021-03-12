@@ -18,7 +18,7 @@ function CardItem(props) {
       action: "AddToCart clicked",
     });
   }
-  const removeCard = (e) => {
+  const removeCard = () => {
     projectFirestore.collection("images").doc(props.id).delete();
   };
 
@@ -34,9 +34,7 @@ function CardItem(props) {
               {props.text}
               <h3 className="cards__item__price">{props.price},-</h3>
             </h4>
-            <p className="cards_item_amountLeft">
-              Der er {props.amountLeft} tilbage af denne ret
-            </p>
+            <p className="item-text">{props.desc}</p>
             <div>
               <button onClick={addToCart} className="cards__item_button">
                 <i class="fas fa-plus"></i>

@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cards.css";
 import CardItem from "./CardsItem";
 import UploadForm from "./UploadForm";
 import useFirestore from "../hooks/useFireStore";
+import Categories from "./Categories";
 
 const Cards = () => {
   const { docs } = useFirestore("images");
-
+  const allCategories = ["all", ...new Set(docs.map((doc) => doc.cat))];
+  const [menuItems, setMenuItems] = useState();
+  const [categories, setCategories] = useState(allCategories);
   //splits into 2
   var chunks = function (array, size = 2) {
     var results = [];
@@ -16,7 +19,8 @@ const Cards = () => {
     return results;
   };
   const data = chunks(docs, 2);
-
+  const items = ["all", ...new Set(docs.map((doc) => doc.url))];
+  console.log(items);
   return (
     <>
       <div className="cards">
@@ -40,6 +44,8 @@ const Cards = () => {
                           label={c.imageLabel}
                           price={c.price}
                           id={c.id}
+                          desc={c.desc}
+                          cat={c.cat}
                         ></CardItem>
                       );
                     })}
