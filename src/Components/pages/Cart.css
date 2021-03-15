@@ -61,7 +61,7 @@
 }
 .cartItem {
   margin-bottom: 1rem;
-
+  padding: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 10px;
 }
@@ -188,4 +188,23 @@
 }
 .form__title {
   width: 100%;
+}
+.clear-btn{
+text-transform: capitalize;
+    width: 10rem;
+    height: 1.5rem;
+    display: grid;
+    align-items: center;
+    background: transparent;
+    border-color: transparent;
+    color: #e66b6b;
+    color: var(--clr-red-light);
+    font-size: .85rem;
+    letter-spacing: .1rem;
+    letter-spacing: var(--spacing);
+    cursor: pointer;
+    transition: all .3s linear;
+    transition: var(--transition);
+    margin: 1.25rem auto 0;
+    
 }

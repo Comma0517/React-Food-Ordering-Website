@@ -20,13 +20,16 @@ function Cart() {
   const removeFromOrder = (id) => {
     const newCart = cart.filter((Cart) => Cart.id !== id);
     setCart(newCart);
+    console.log(cart);
   };
   function handleOrder() {
     if (!currentUser) {
       history.push("/login");
     }
   }
-  function navigateToMenu() {}
+  function clearCart() {
+    setCart([]);
+  }
 
   return (
     <>
@@ -36,7 +39,7 @@ function Cart() {
             Din kurv er tom <i class="far fa-sad-cry"></i>
           </h1>
           <div className="center">
-            <Link to="/" onClick={navigateToMenu}>
+            <Link to="/">
               <button className="goToMenuBtn">Gå til menu {""}</button>
             </Link>
           </div>
@@ -45,6 +48,7 @@ function Cart() {
       <div className="cart">
         <div className="cart__items">
           <div className="cartItem">
+            <h1>Din kurv</h1>
             {cart &&
               cart.map((doc) => (
                 <li className="cartItem__details">
@@ -56,12 +60,17 @@ function Cart() {
                     >
                       <i class="fas fa-trash fa-2x"></i>
                     </span>{" "}
-                    <p className="">{doc.price}kr. </p>
+                    <p>{doc.price}kr. </p>
                   </p>
 
                   <span className="removeButton"></span>
                 </li>
               ))}
+            {cart.length != 0 && (
+              <button onClick={clearCart} className="clear-btn">
+                Tøm kurven
+              </button>
+            )}
           </div>
         </div>
         {cart.length != 0 && (

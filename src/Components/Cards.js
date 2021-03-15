@@ -10,17 +10,19 @@ const Cards = () => {
   const allCategories = ["all", ...new Set(docs.map((doc) => doc.cat))];
   const [menuItems, setMenuItems] = useState();
   const [categories, setCategories] = useState(allCategories);
+
   //splits into 2
-  var chunks = function (array, size = 2) {
+  var chunks = function (array, size) {
     var results = [];
     while (array.length) {
+      console.log("running");
       results.push(array.splice(0, size));
     }
+
     return results;
   };
   const data = chunks(docs, 2);
-  const items = ["all", ...new Set(docs.map((doc) => doc.url))];
-  console.log(items);
+
   return (
     <>
       <div className="cards">
