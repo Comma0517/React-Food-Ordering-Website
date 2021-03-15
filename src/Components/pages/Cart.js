@@ -48,7 +48,7 @@ function Cart() {
       <div className="cart">
         <div className="cart__items">
           <div className="cartItem">
-            {!cart && <h1>Din kurv</h1>}
+            {cart != 0 && <h1>Din kurv</h1>}
             {cart &&
               cart.map((doc) => (
                 <li className="cartItem__details">
