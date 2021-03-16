@@ -20,12 +20,17 @@ export default function Profile() {
   return (
     <>
       <div className="profile__container">
+        <div className="profile__info">
+          <div className="profile__info__wrapper"></div>
+        </div>
         <div className="profile__wrapper">
           <h1 className="profile__header">Profil</h1>
           {error && <alert variant="danger">{error}</alert>}
+          <h2 className="profile__item">Navn:</h2>
           <h2 className="profile__item">
             Email: {localStorage.getItem("loginEmail")}
           </h2>
+          <h2 className="profile__item">Telefon nummer:</h2>
           <button className="profile__button">Updatér profil</button>
           <button onClick={handleLogout} className="profile__button">
             Log ud
