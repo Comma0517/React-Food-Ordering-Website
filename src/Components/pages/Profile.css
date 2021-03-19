@@ -7,6 +7,7 @@
   width: 90%;
   margin: 0 auto;
   text-align: center;
+  
 }
 .profile__wrapper {
   position: relative;
@@ -15,6 +16,7 @@
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   min-height: 200px;
+    padding: 2rem;
 }
 .profile__header {
   text-align: center;
@@ -25,6 +27,7 @@
   flex: 1;
   margin: 0 1rem;
   border-radius: 10px;
+
 }
 .profile__button {
   color: white;
@@ -45,4 +48,21 @@
   color: var(--clr-primary-4);
   border: 2px solid var(--clr-primary-4);
   transition-duration: 0.2s ease-out;
+}
+.profile__info__wrapper{
+    float: left;
+   
+  margin: 50px 0 45px;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  min-height: 200px;
+    padding: 2rem;
+        padding-left: 8px;
+    padding-right: 8px;
+        flex-grow: 0;
+    max-width: 25%!important;
+        flex: 1 0 0;
+    min-width: 0;
+        display: block;
 }

@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import { projectFirestore } from "../Firebase";
 import ReactGA from "react-ga";
+
 function CardItem(props) {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
@@ -21,7 +22,9 @@ function CardItem(props) {
   const removeCard = () => {
     projectFirestore.collection("images").doc(props.id).delete();
   };
-
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
   return (
     <>
       <li className="cards__item">

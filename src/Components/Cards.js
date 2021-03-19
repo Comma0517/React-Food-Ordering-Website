@@ -8,7 +8,7 @@ import Categories from "./Categories";
 const Cards = () => {
   const { docs } = useFirestore("images");
   const allCategories = ["all", ...new Set(docs.map((doc) => doc.cat))];
-  const [menuItems, setMenuItems] = useState();
+  const [menuItems, setMenuItems] = useState([]);
   const [categories, setCategories] = useState(allCategories);
 
   //splits into 2
