@@ -118,10 +118,7 @@
 
 .deleteItemBtn {
   color: tomato;
-  width: 50px;
-  height: 50px;
   float: right;
-  outline: none;
 }
 .deleteItemBtn:hover {
   color: red;
@@ -189,22 +186,23 @@
 .form__title {
   width: 100%;
 }
-.clear-btn{
-text-transform: capitalize;
-    width: 10rem;
-    height: 1.5rem;
-    display: grid;
-    align-items: center;
-    background: transparent;
-    border-color: transparent;
-    color: #e66b6b;
-    color: var(--clr-red-light);
-    font-size: .85rem;
-    letter-spacing: .1rem;
-    letter-spacing: var(--spacing);
-    cursor: pointer;
-    transition: all .3s linear;
-    transition: var(--transition);
-    margin: 1.25rem auto 0;
-    
+.clear-btn {
+  text-transform: capitalize;
+  width: 10rem;
+  height: 1.5rem;
+  display: grid;
+  align-items: center;
+  background: transparent;
+  border-color: transparent;
+  color: #e66b6b;
+  color: var(--clr-red-light);
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  letter-spacing: var(--spacing);
+  transition: all 0.3s linear;
+  transition: var(--transition);
+  margin: 1.25rem auto 0;
+}
+.cursor-pointer {
+  cursor: pointer;
 }

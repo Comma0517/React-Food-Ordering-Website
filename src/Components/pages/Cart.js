@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import { useAuth } from "../AuthContext";
 import { useHistory } from "react-router-dom";
 import "./Cart.css";
 import "../UploadForm.css";
 import { Link } from "react-router-dom";
-
-//import CartItem from "../Cart/CartItem";
+import CartEmpty from "../Cart/CartEmpty";
+import { MinusCircle, PlusCircle } from "react-feather";
 
 function Cart() {
   // eslint-disable-next-line
@@ -14,13 +14,18 @@ function Cart() {
   const { currentUser, logout } = useAuth();
   const history = useHistory();
   const deliveryCost = 29;
-  const totalPrice =
-    cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
+  let totalPrice =
+    cart.reduce((acc, curr) => acc + parseInt(curr.price * curr.qty), 0) +
+    deliveryCost;
+
+  useEffect(() => {
+    totalPrice =
+      cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
+  }, [cart]);
 
   const removeFromOrder = (id) => {
     const newCart = cart.filter((Cart) => Cart.id !== id);
     setCart(newCart);
-    console.log(cart);
   };
   function handleOrder() {
     if (!currentUser) {
@@ -30,41 +35,73 @@ function Cart() {
   function clearCart() {
     setCart([]);
   }
-
+  const increaseBasket = (id) => {
+    setCart(
+      cart.map((CartItem) =>
+        CartItem.id === id ? { ...CartItem, qty: CartItem.qty + 1 } : CartItem
+      )
+    );
+  };
+  const decreaseBasket = (id, qty) => {
+    setCart(
+      cart.map((CartItem) =>
+        CartItem.id === id ? { ...CartItem, qty: CartItem.qty - 1 } : CartItem
+      )
+    );
+    removeEmptyItems(id, qty); // if quantity is 0 remove the food from the basket
+  };
+  const removeEmptyItems = (id, qty) => {
+    if (qty === 1) {
+      removeFromOrder(id);
+    }
+  };
   return (
     <>
-      {cart.length === 0 && (
-        <div>
-          <h1 className="cart__empy">
-            Din kurv er tom <i class="far fa-sad-cry"></i>
-          </h1>
-          <div className="center">
-            <Link to="/">
-              <button className="goToMenuBtn">Gå til menu {""}</button>
-            </Link>
-          </div>
-        </div>
-      )}
+      {cart.length === 0 && <CartEmpty />}
       <div className="cart">
         <div className="cart__items">
           <div className="cartItem">
-            {cart != 0 && <h1>Din kurv</h1>}
+            {cart != 0 && <h1 className="mb-5">Din kurv</h1>}
             {cart &&
               cart.map((doc) => (
-                <li className="cartItem__details">
-                  <p>
-                    {doc.name}{" "}
-                    <span
-                      onClick={() => removeFromOrder(doc.id)}
-                      className="deleteItemBtn"
-                    >
-                      <i class="fas fa-trash fa-2x"></i>
-                    </span>{" "}
-                    <p>{doc.price}kr. </p>
-                  </p>
-
-                  <span className="removeButton"></span>
-                </li>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-sm">
+                      {doc.name} {doc.price}kr.
+                    </div>
+                    <div className="col-sm">
+                      <div className="row">
+                        <div className="col-sm"></div>
+                        <div className="col-sm ">
+                          <PlusCircle
+                            onClick={() => increaseBasket(doc.id)}
+                            className="cursor-pointer"
+                            size={28}
+                            color={"var(--clr-green-dark)"}
+                          />
+                        </div>
+                        <p className="foodItemAmount col-sm"> {doc.qty}</p>
+                        <div className="col-sm ">
+                          <MinusCircle
+                            onClick={() => decreaseBasket(doc.id, doc.qty)}
+                            className="cursor-pointer"
+                            size={28}
+                            color={"var(--clr-red-dark)"}
+                          />
+                        </div>
+                        <div className="col-sm"></div>
+                      </div>
+                    </div>
+                    <div className="col-sm">
+                      <span
+                        onClick={() => removeFromOrder(doc.id)}
+                        className="deleteItemBtn"
+                      >
+                        <i class="fas fa-trash fa-2x"></i>
+                      </span>{" "}
+                    </div>
+                  </div>
+                </div>
               ))}
             {cart.length != 0 && (
               <button onClick={clearCart} className="clear-btn">

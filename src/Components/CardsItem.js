@@ -7,18 +7,30 @@ function CardItem(props) {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
 
-  function addToCart() {
+  const addToCart = () => {
     const foodItem = {
       name: props.text,
       price: props.price,
       id: Math.random().toString(36).substr(2, 9),
+      qty: 1,
     };
-    setCart((currentState) => [...currentState, foodItem]);
+    const exists = cart.find((x) => x.name === foodItem.name);
+    if (exists) {
+      setCart(
+        cart.map((x) =>
+          x.name === foodItem.name ? { ...x, qty: x.qty + 1 } : x
+        )
+      );
+    } else {
+      setCart((currentState) => [...currentState, foodItem]);
+    }
+
     ReactGA.event({
       category: "Button",
       action: "AddToCart clicked",
     });
-  }
+  };
+
   const removeCard = () => {
     projectFirestore.collection("images").doc(props.id).delete();
   };

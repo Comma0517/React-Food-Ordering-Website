@@ -15,7 +15,6 @@ const Cards = () => {
   var chunks = function (array, size) {
     var results = [];
     while (array.length) {
-      console.log("running");
       results.push(array.splice(0, size));
     }
 

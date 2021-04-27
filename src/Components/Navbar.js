@@ -13,7 +13,11 @@ function Navbar() {
   const [buttonText, setButtonText] = useState("Log ind");
   // eslint-disable-next-line
   const [cart] = useContext(CartContext);
-  const totalPrice = cart.reduce((acc, curr) => acc + parseInt(curr.price), 0);
+  const totalPrice = cart.reduce(
+    (acc, curr) => acc + parseInt(curr.price * curr.qty),
+    0
+  );
+
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const deliveryCost = 29;
@@ -31,6 +35,7 @@ function Navbar() {
   useEffect(() => {
     showButton();
   }, []);
+
   function handleCartClick() {
     ReactGA.event({
       category: "Button",
