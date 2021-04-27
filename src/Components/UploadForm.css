@@ -50,14 +50,6 @@
   --clr-orange-10: hsl(13, 73%, 16%);
 }
 
-/*:root {
-  --primary: black;
-  --secondary: #4e4e4e;
-  --error: #ff4a4a;
-}
-
-/* base styles & title */
-
 /* upload form styles */
 .uploadForm {
   margin: 30px auto 10px;
@@ -97,7 +89,7 @@ label input {
 /* progress bar styles */
 .progress-bar {
   height: 5px;
-  background: var(--primary);
+  background: var(--primaryWhite);
   margin-top: 20px;
 }
 
