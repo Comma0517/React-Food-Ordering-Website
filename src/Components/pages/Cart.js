@@ -4,7 +4,6 @@ import { useAuth } from "../AuthContext";
 import { useHistory } from "react-router-dom";
 import "./Cart.css";
 import "../UploadForm.css";
-import { Link } from "react-router-dom";
 import CartEmpty from "../Cart/CartEmpty";
 import { MinusCircle, PlusCircle } from "react-feather";
 
@@ -15,8 +14,10 @@ function Cart() {
   const history = useHistory();
   const deliveryCost = 29;
   let totalPrice =
-    cart.reduce((acc, curr) => acc + parseInt(curr.price * curr.qty), 0) +
-    deliveryCost;
+    cart.reduce(
+      (acc, curr) => acc + parseInt(curr.price * curr.qty),
+      deliveryCost
+    ) + deliveryCost;
 
   useEffect(() => {
     totalPrice =

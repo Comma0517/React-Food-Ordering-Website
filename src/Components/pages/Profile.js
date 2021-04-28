@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Profile.css";
+import ImgBg from "../../images/foodimage2.jpg";
 export default function Profile() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
@@ -19,6 +20,11 @@ export default function Profile() {
   }
   return (
     <>
+      <img
+        src={ImgBg}
+        class="img-fluid mx-auto d-block"
+        alt="Responsive image"
+      ></img>
       <div className="profile__container">
         <div className="profile__info">
           <div className="profile__info__wrapper"></div>

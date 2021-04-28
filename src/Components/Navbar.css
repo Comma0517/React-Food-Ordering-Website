@@ -29,6 +29,11 @@
   align-items: center;
 }
 
+.navbar-logo:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
 .fa-typo3 {
   margin-left: 0.5rem;
   font-size: 1.8rem;

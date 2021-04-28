@@ -3,13 +3,9 @@ import "./Cards.css";
 import CardItem from "./CardsItem";
 import UploadForm from "./UploadForm";
 import useFirestore from "../hooks/useFireStore";
-import Categories from "./Categories";
 
 const Cards = () => {
   const { docs } = useFirestore("images");
-  const allCategories = ["all", ...new Set(docs.map((doc) => doc.cat))];
-  const [menuItems, setMenuItems] = useState([]);
-  const [categories, setCategories] = useState(allCategories);
 
   //splits into 2
   var chunks = function (array, size) {
