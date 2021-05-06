@@ -25,7 +25,7 @@ export default function Profile() {
       </div>
 
       <div className="profile__container">
-        <div className="profile__wrapper">
+        <div className="profile__wrapper ">
           <h1 className="profile__header">Profil</h1>
           {error && <alert variant="danger">{error}</alert>}
           <h2 className="profile__item">

@@ -59,12 +59,12 @@ function Cart() {
   return (
     <>
       {cart.length === 0 && <CartEmpty />}
-      <div className="cart">
-        <div className="cart__items">
-          <div className="cartItem">
-            {cart != 0 && <h1 className="mb-5">Din kurv</h1>}
-            {cart &&
-              cart.map((doc) => (
+      {cart != 0 && (
+        <div className="cart">
+          <div className="cart__items">
+            <div className="cartItem">
+              <h1 className="mb-5">Din kurv</h1>
+              {cart.map((doc) => (
                 <div className="container">
                   <div className="row">
                     <div className="col-sm">
@@ -104,67 +104,69 @@ function Cart() {
                   </div>
                 </div>
               ))}
-            {cart.length != 0 && (
-              <button onClick={clearCart} className="clear-btn">
-                Tøm kurven
-              </button>
-            )}
+              {cart.length != 0 && (
+                <button onClick={clearCart} className="clear-btn">
+                  Tøm kurven
+                </button>
+              )}
+            </div>
           </div>
-        </div>
-        {cart.length != 0 && (
-          <div className="cart__summary">
-            <div className="cart__summary__container">
-              <div className="cart__summary__wrapper">
-                <h4 className="summary__title">Kurv</h4>
-                {cart.length !== 0 && <p>Levering {deliveryCost} kr.</p>}
 
-                <div className="summary__price">
-                  <span>TOTAL: </span>
+          {cart.length != 0 && (
+            <div className="cart__summary">
+              <div className="cart__summary__container">
+                <div className="cart__summary__wrapper">
+                  <h4 className="summary__title">Kurv</h4>
+                  {cart.length !== 0 && <p>Levering {deliveryCost} kr.</p>}
 
-                  {cart.length !== 0 && <span>{totalPrice} kr.</span>}
-                </div>
+                  <div className="summary__price">
+                    <span>TOTAL: </span>
 
-                <h2 className="form__title">Leveres til:</h2>
-                <div className="form__container">
-                  <div>
-                    <label htmlFor="adress">Adresse : </label>
-                    <input
-                      className="input__adress"
-                      type="address"
-                      id="address"
-                      name="address"
-                    />
+                    {cart.length !== 0 && <span>{totalPrice} kr.</span>}
                   </div>
-                  <div>
-                    <label htmlFor="city">By : </label>
-                    <input
-                      className="input__adress"
-                      type="city"
-                      id="city"
-                      name="city"
-                    />
+
+                  <h2 className="form__title">Leveres til:</h2>
+                  <div className="form__container">
+                    <div>
+                      <label htmlFor="adress">Adresse : </label>
+                      <input
+                        className="input__adress"
+                        type="address"
+                        id="address"
+                        name="address"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="city">By : </label>
+                      <input
+                        className="input__adress"
+                        type="city"
+                        id="city"
+                        name="city"
+                      />
+                    </div>
+                    <div style={{ maxWidth: "100%" }}>
+                      <label htmlFor="zipcode">Postnummer : </label>
+                      <input
+                        className="input__adress"
+                        type="zipcode"
+                        id="zipcode"
+                        name="zipcode"
+                      />
+                    </div>
+                    <button
+                      className="summary__checkoutBtn"
+                      onClick={handleOrder}
+                    >
+                      Køb
+                    </button>
                   </div>
-                  <div style={{ maxWidth: "100%" }}>
-                    <label htmlFor="zipcode">Postnummer : </label>
-                    <input
-                      className="input__adress"
-                      type="zipcode"
-                      id="zipcode"
-                      name="zipcode"
-                    />
-                  </div>
-                  <button
-                    className="summary__checkoutBtn"
-                    onClick={handleOrder}
-                  >
-                    Køb
-                  </button>
                 </div>
               </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      )}
     </>
   );
 }
