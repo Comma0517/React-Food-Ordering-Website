@@ -9,10 +9,11 @@ export default function Profile() {
   const history = useHistory();
   async function handleLogout() {
     setError("");
-
     try {
       await logout();
       localStorage.removeItem("loginEmail");
+      localStorage.removeItem("loginImg");
+      localStorage.removeItem("loginFullname");
       history.push("/login");
     } catch {
       setError("Failed to log out");
@@ -26,11 +27,15 @@ export default function Profile() {
 
       <div className="profile__container">
         <div className="profile__wrapper ">
-          <h1 className="profile__header">Profil</h1>
+          <img
+            className="rounded-circle"
+            src={localStorage.getItem("loginImg")}
+          ></img>
+          <h1 className="profile__header">
+            {localStorage.getItem("loginFullname")}
+          </h1>
           {error && <alert variant="danger">{error}</alert>}
-          <h2 className="profile__item">
-            Email: {localStorage.getItem("loginEmail")}
-          </h2>
+          <h2>Email: {localStorage.getItem("loginEmail")}</h2>
           <div className="mt-5">
             <button className="profile__button">Updatér profil</button>
             <button onClick={handleLogout} className="profile__button">

@@ -3,11 +3,11 @@ import { Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useForm from "./UseForm";
 import "./Form.css";
+import GoogleLoginHandler from "./GoogleLoginHandler";
 
 const FormSignup = ({ submitForm }) => {
-  const { handleChange, handleSubmit, values, loading, error } = useForm(
-    submitForm
-  );
+  const { handleChange, handleSubmit, values, loading, error } =
+    useForm(submitForm);
 
   return (
     <div className="form-content-right">
@@ -59,6 +59,8 @@ const FormSignup = ({ submitForm }) => {
             Log ind{" "}
           </Link>
         </span>
+        <span className="form-input-login">- Eller -</span>
+        <GoogleLoginHandler />
       </form>
     </div>
   );

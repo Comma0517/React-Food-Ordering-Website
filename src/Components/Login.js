@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "./AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Form.css";
+import GoogleLoginHandler from "./GoogleLoginHandler";
 
 export default function Login() {
   const emailRef = useRef();
@@ -70,6 +71,9 @@ export default function Login() {
                 Sign up{" "}
               </Link>
             </span>
+            <span className="form-input-login">- Eller -</span>
+            <br></br>
+            <GoogleLoginHandler />
           </form>
         </div>
       </div>

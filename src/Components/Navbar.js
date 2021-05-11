@@ -87,7 +87,8 @@ function Navbar() {
           )}
           {localStorage.getItem("loginEmail") && button && (
             <ButtonProfile buttonStyle="btn--outline">
-              {currentUser && currentUser.email}
+              {localStorage.getItem("loginFullname") !== null &&
+                localStorage.getItem("loginFullname")}
             </ButtonProfile>
           )}
 
