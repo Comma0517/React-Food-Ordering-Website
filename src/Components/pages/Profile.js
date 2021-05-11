@@ -22,25 +22,27 @@ export default function Profile() {
   return (
     <>
       <div>
-        <img src={ImgBg} class="w-100"></img>
+        <img src={ImgBg} className="w-100 "></img>
       </div>
-
-      <div className="profile__container">
-        <div className="profile__wrapper ">
-          <img
-            className="rounded-circle"
-            src={localStorage.getItem("loginImg")}
-          ></img>
-          <h1 className="profile__header">
-            {localStorage.getItem("loginFullname")}
-          </h1>
-          {error && <alert variant="danger">{error}</alert>}
-          <h2>Email: {localStorage.getItem("loginEmail")}</h2>
-          <div className="mt-5">
-            <button className="profile__button">Updatér profil</button>
-            <button onClick={handleLogout} className="profile__button">
-              Log ud
-            </button>
+      <div className="container ">
+        <div className="mt-5">
+          <div className="text-center">
+            <img
+              className="rounded-circle text-center"
+              src={localStorage.getItem("loginImg")}
+            ></img>
+            <h1 className="text-center">
+              {localStorage.getItem("loginFullname")}
+            </h1>
+            {error && <alert variant="danger">{error}</alert>}
+            <p className="text-center text-secondary">
+              {localStorage.getItem("loginEmail")}
+            </p>
+            <div className="mt-5 text-center">
+              <button onClick={handleLogout} className="profile__button">
+                Log ud
+              </button>
+            </div>
           </div>
         </div>
       </div>
