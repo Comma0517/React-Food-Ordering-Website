@@ -46,14 +46,14 @@ function CartFill(props) {
                     <PlusCircle
                       onClick={() => increaseBasket(doc.id)}
                       className="cursor-pointer"
-                      size={18}
+                      size={22}
                       color={"var(--clr-green-dark)"}
                     />
-                    <a>{doc.qty}</a>
+                    <span className="p-2 text-black">{doc.qty}</span>
                     <MinusCircle
                       onClick={() => props.decreaseBasket(doc.id, doc.qty)}
                       className="cursor-pointer"
-                      size={18}
+                      size={22}
                       color={"var(--clr-red-dark)"}
                     />
                   </h6>
