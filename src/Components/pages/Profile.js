@@ -24,7 +24,7 @@ export default function Profile() {
       <div>
         <img src={ImgBg} className="w-100 "></img>
       </div>
-      <div className="container ">
+      <div className="container shadow-lg p-3 mb-5 bg-white rounded">
         <div className="mt-5">
           <div className="text-center">
             <img
