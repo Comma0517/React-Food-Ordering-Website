@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { MinusCircle, PlusCircle } from "react-feather";
 import imgPaymentOptions from "../../src/images/cards.jpg";
 function CartFill(props) {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const currency = "kr.";
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
@@ -453,18 +453,22 @@ function CartFill(props) {
         )}
       </div>
       <footer class="my-5 pt-5 text-muted text-center text-small">
-        <img className=" mb-4 w-25 img-fluid" src={imgPaymentOptions}></img>
+        <img
+          className=" mb-4 w-25 img-fluid"
+          src={imgPaymentOptions}
+          alt="payment options"
+        ></img>
         <p class="mb-1">&copy; Save-a-meal</p>
 
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="#">Privacy</a>
+            <a href="/">Privacy</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Terms</a>
+            <a href="/">Terms</a>
           </li>
           <li class="list-inline-item">
-            <a href="#">Support</a>
+            <a href="/">Support</a>
           </li>
         </ul>
       </footer>

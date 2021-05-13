@@ -9,7 +9,11 @@ function Home() {
       <LandingPage></LandingPage>
       <Cards />
       <div className=" text-center">
-        <img className="mb-4 w-25" src={imgPaymentOptions}></img>
+        <img
+          className="mb-4 w-25"
+          src={imgPaymentOptions}
+          alt="payment options"
+        ></img>
       </div>
     </>
   );
