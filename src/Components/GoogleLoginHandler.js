@@ -10,6 +10,8 @@ function GoogleLoginHandler() {
     localStorage.setItem("loginEmail", response.profileObj.email);
     localStorage.setItem("loginImg", response.profileObj.imageUrl);
     localStorage.setItem("loginFullname", response.profileObj.name);
+    localStorage.setItem("loginFirstName", response.profileObj.givenName);
+    localStorage.setItem("loginLastName", response.profileObj.familyName);
     history.push("/profile");
     console.log(localStorage.getItem("loginEmail"));
     console.log(response);

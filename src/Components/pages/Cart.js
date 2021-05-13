@@ -61,7 +61,14 @@ function Cart() {
     <>
       {cart.length === 0 && <CartEmpty />}
       {cart.length !== 0 && (
-        <CartFill decreaseBasket={decreaseBasket} clearCart={clearCart} />
+        <CartFill
+          decreaseBasket={decreaseBasket}
+          clearCart={clearCart}
+          increaseBasket={increaseBasket}
+          removeFromOrder={removeFromOrder}
+          totalPrice={totalPrice}
+          cart={cart}
+        />
       )}
     </>
   );

@@ -6,27 +6,6 @@ function CartFill(props) {
   const currency = "kr.";
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
-  const deliveryCost = 29;
-  let totalPrice =
-    cart.reduce(
-      (acc, curr) => acc + parseInt(curr.price * curr.qty),
-      deliveryCost
-    ) + deliveryCost;
-  useEffect(() => {
-    totalPrice =
-      cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
-  }, [cart]);
-  const removeFromOrder = (id) => {
-    const newCart = cart.filter((Cart) => Cart.id !== id);
-    setCart(newCart);
-  };
-  const increaseBasket = (id) => {
-    setCart(
-      cart.map((CartItem) =>
-        CartItem.id === id ? { ...CartItem, qty: CartItem.qty + 1 } : CartItem
-      )
-    );
-  };
 
   return (
     <div className="container mt-5">
@@ -44,7 +23,7 @@ function CartFill(props) {
                     {" "}
                     {doc.name}{" "}
                     <PlusCircle
-                      onClick={() => increaseBasket(doc.id)}
+                      onClick={() => props.increaseBasket(doc.id)}
                       className="cursor-pointer"
                       size={22}
                       color={"var(--clr-green-dark)"}
@@ -77,7 +56,7 @@ function CartFill(props) {
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (DKK)</span>
               <strong>
-                {totalPrice}
+                {props.totalPrice}
                 {fullPrice}
               </strong>
             </li>
@@ -91,202 +70,387 @@ function CartFill(props) {
                 placeholder="Promo code"
               />
               <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">
+                <button type="submit" class="btn btn-primary">
                   Redeem
                 </button>
               </div>
             </div>
           </form>
         </div>
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Personlige oplysninger</h4>
-          <form class="needs-validation" novalidate>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">Navn</label>
+        {localStorage.getItem("loginEmail") === null && (
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Personlige oplysninger</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Navn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="Indtast dit fornavn"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="lastName">Efternavn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Indtast dit efternavn"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Indtast din email"
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+              <h4 class="mb-3">Leveringsadresse</h4>
+              <div class="mb-3">
+                <label for="address">Addresse</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="firstName"
-                  placeholder="Indtast dit fornavn"
+                  id="address"
+                  placeholder="Indtast vejnavn"
                   required
                 />
                 <div class="invalid-feedback">
-                  Valid first name is required.
+                  Please enter your shipping address.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Efternavn</label>
+              <div class="mb-3">
+                <label for="zip">Postnummer</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="lastName"
-                  placeholder="Indtast dit efternavn"
-                  required
+                  id="zip"
+                  placeholder="Indtast dit postnummer"
                 />
-                <div class="invalid-feedback">Valid last name is required.</div>
               </div>
-            </div>
-            <div class="mb-3">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                placeholder="Indtast din email"
-              />
-              <div class="invalid-feedback">
-                Please enter a valid email address for shipping updates.
-              </div>
-            </div>
-            <h4 class="mb-3">Leveringsadresse</h4>
-            <div class="mb-3">
-              <label for="address">Addresse</label>
-              <input
-                type="text"
-                class="form-control"
-                id="address"
-                placeholder="Indtast vejnavn"
-                required
-              />
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="zip">Postnummer</label>
-              <input
-                type="text"
-                class="form-control"
-                id="zip"
-                placeholder="Indtast dit postnummer"
-              />
-            </div>
 
-            <hr class="mb-4" />
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="same-address"
-              />
-              <label class="custom-control-label" for="same-address">
-                Shipping address is the same as my billing address
-              </label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input
-                type="checkbox"
-                class="custom-control-input"
-                id="save-info"
-              />
-              <label class="custom-control-label" for="save-info">
-                Save this information for next time
-              </label>
-            </div>
-            <hr class="mb-4" />
+              <hr class="mb-4" />
 
-            <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
+              <div class="custom-control custom-checkbox">
                 <input
-                  id="credit"
-                  name="paymentMethod"
-                  type="radio"
+                  type="checkbox"
                   class="custom-control-input"
-                  checked
-                  required
+                  id="save-info"
                 />
-                <label class="custom-control-label" for="credit">
-                  Kort
+                <label class="custom-control-label" for="save-info">
+                  Gem min leveringsadresse til næste ordre
                 </label>
               </div>
-              <div class="custom-control custom-radio">
-                <input
-                  id="mobilepay"
-                  name="paymentMethod"
-                  type="radio"
-                  class="custom-control-input"
-                  required
-                />
-                <label class="custom-control-label" for="debit">
-                  Mobile pay
-                </label>
+              <hr class="mb-4" />
+
+              <h4 class="mb-3">Payment</h4>
+
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input
+                    id="credit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    checked
+                    required
+                  />
+                  <label class="custom-control-label" for="credit">
+                    Kort
+                  </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    id="mobilepay"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="debit">
+                    Mobile pay
+                  </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    id="paypal"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="paypal">
+                    PayPal
+                  </label>
+                </div>
               </div>
-              <div class="custom-control custom-radio">
-                <input
-                  id="paypal"
-                  name="paymentMethod"
-                  type="radio"
-                  class="custom-control-input"
-                  required
-                />
-                <label class="custom-control-label" for="paypal">
-                  PayPal
-                </label>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Navn på kort</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-muted">
+                    indtast navnet der står på dit kort
+                  </small>
+                  <div class="invalid-feedback">Name on card is required</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Credit card number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="cc-name">Navn på kort</label>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Expiration</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Expiration date required</div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-cvv">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Security code required</div>
+                </div>
+              </div>
+              <hr class="mb-4" />
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                Bestil og betal med kort ({props.totalPrice}
+                {fullPrice})
+              </button>
+            </form>
+          </div>
+        )}
+        {localStorage.getItem("loginEmail") !== null && (
+          <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Personlige oplysninger</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="firstName">Navn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="Indtast dit fornavn"
+                    value={localStorage.getItem("loginFirstName")}
+                    style={{ backgroundColor: "var(--clr-grey-10)" }}
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid first name is required.
+                  </div>
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label for="lastName">Efternavn</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Indtast dit efternavn"
+                    value={localStorage.getItem("loginLastName")}
+                    style={{ backgroundColor: "var(--clr-grey-10)" }}
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Indtast din email"
+                  value={localStorage.getItem("loginEmail")}
+                  style={{ backgroundColor: "var(--clr-grey-10)" }}
+                />
+                <div class="invalid-feedback">
+                  Please enter a valid email address for shipping updates.
+                </div>
+              </div>
+              <h4 class="mb-3">Leveringsadresse</h4>
+              <div class="mb-3">
+                <label for="address">Addresse</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="cc-name"
-                  placeholder=""
-                  required
-                />
-                <small class="text-muted">
-                  indtast navnet der står på dit kort
-                </small>
-                <div class="invalid-feedback">Name on card is required</div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="cc-number">Credit card number</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cc-number"
-                  placeholder=""
+                  id="address"
+                  placeholder="Indtast vejnavn"
                   required
                 />
                 <div class="invalid-feedback">
-                  Credit card number is required
+                  Please enter your shipping address.
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
+              <div class="mb-3">
+                <label for="zip">Postnummer</label>
                 <input
                   type="text"
                   class="form-control"
-                  id="cc-expiration"
-                  placeholder=""
-                  required
+                  id="zip"
+                  placeholder="Indtast dit postnummer"
                 />
-                <div class="invalid-feedback">Expiration date required</div>
               </div>
-              <div class="col-md-3 mb-3">
-                <label for="cc-cvv">CVV</label>
+
+              <hr class="mb-4" />
+
+              <div class="custom-control custom-checkbox">
                 <input
-                  type="text"
-                  class="form-control"
-                  id="cc-cvv"
-                  placeholder=""
-                  required
+                  type="checkbox"
+                  class="custom-control-input"
+                  id="save-info"
                 />
-                <div class="invalid-feedback">Security code required</div>
+                <label class="custom-control-label" for="save-info">
+                  Gem min leveringsadresse til næste ordre
+                </label>
               </div>
-            </div>
-            <hr class="mb-4" />
-            <button class="btn btn-primary btn-lg btn-block" type="submit">
-              Bestil og betal med kort ({totalPrice}
-              {fullPrice})
-            </button>
-          </form>
-        </div>
+              <hr class="mb-4" />
+
+              <h4 class="mb-3">Payment</h4>
+
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input
+                    id="credit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    checked
+                    required
+                  />
+                  <label class="custom-control-label" for="credit">
+                    Kort
+                  </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    id="mobilepay"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="debit">
+                    Mobile pay
+                  </label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input
+                    id="paypal"
+                    name="paymentMethod"
+                    type="radio"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="paypal">
+                    PayPal
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="cc-name">Navn på kort</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-muted">
+                    indtast navnet der står på dit kort
+                  </small>
+                  <div class="invalid-feedback">Name on card is required</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="cc-number">Credit card number</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Credit card number is required
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mb-3">
+                  <label for="cc-expiration">Expiration</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Expiration date required</div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="cc-cvv">CVV</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">Security code required</div>
+                </div>
+              </div>
+              <hr class="mb-4" />
+              <button class="btn btn-primary btn-lg btn-block" type="submit">
+                Bestil og betal med kort ({props.totalPrice}
+                {fullPrice})
+              </button>
+            </form>
+          </div>
+        )}
       </div>
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <p class="mb-1">&copy; Save-a-meal</p>
