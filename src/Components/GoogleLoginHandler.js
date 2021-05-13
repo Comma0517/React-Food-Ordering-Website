@@ -12,7 +12,7 @@ function GoogleLoginHandler() {
     localStorage.setItem("loginFullname", response.profileObj.name);
     localStorage.setItem("loginFirstName", response.profileObj.givenName);
     localStorage.setItem("loginLastName", response.profileObj.familyName);
-    history.push("/profile");
+    history.push("/cart");
     console.log(localStorage.getItem("loginEmail"));
     console.log(response);
   };

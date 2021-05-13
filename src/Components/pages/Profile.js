@@ -24,11 +24,11 @@ export default function Profile() {
     var today = new Date();
     var curHr = today.getHours();
     if (curHr < 12) {
-      return "good morning";
+      return "Godmorgen";
     } else if (curHr < 18) {
-      return "Good Afternoon";
+      return "God eftermiddag";
     } else {
-      return "good evening";
+      return "God aften";
     }
   }
 
@@ -45,12 +45,13 @@ export default function Profile() {
               src={localStorage.getItem("loginImg")}
             ></img>
             <h3 className="text-center">
-              {getGreeting()}, {localStorage.getItem("loginFullname")}
+              {getGreeting()}, {localStorage.getItem("loginFirstName")}
             </h3>
             {error && <alert variant="danger">{error}</alert>}
-            <p className="text-center text-secondary">
-              {localStorage.getItem("loginEmail")}
-            </p>
+            <p className="text-center text-secondary">Føler du dig sulten?</p>
+            <a href="/" className="btn btn-primary">
+              Gå til menuen
+            </a>
             <div className="mt-5 text-center">
               <button
                 onClick={handleLogout}

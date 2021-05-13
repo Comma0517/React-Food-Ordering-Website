@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
-import { MinusCircle, PlusCircle } from "react-feather";
+import { ExternalLink, MinusCircle, PlusCircle, UserPlus } from "react-feather";
 import imgPaymentOptions from "../../src/images/cards.jpg";
+import GoogleLoginHandler from "./GoogleLoginHandler";
+import { Link } from "react-router-dom";
+
 function CartFill(props) {
   const [cart] = useContext(CartContext);
   const currency = "kr.";
@@ -14,7 +17,7 @@ function CartFill(props) {
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Din kurv</span>
-            <span class="badge badge-secondary badge-pill">{cart.length}</span>
+            <span class="badge badge-primary badge-pill ">{cart.length}</span>
           </h4>
           <ul class="list-group mb-3">
             {cart.map((doc) => (
@@ -80,186 +83,23 @@ function CartFill(props) {
         </div>
         {localStorage.getItem("loginEmail") === null && (
           <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Personlige oplysninger</h4>
-            <form class="needs-validation" novalidate>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="firstName">Navn</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="firstName"
-                    placeholder="Indtast dit fornavn"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Valid first name is required.
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="lastName">Efternavn</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="lastName"
-                    placeholder="Indtast dit efternavn"
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Valid last name is required.
-                  </div>
-                </div>
+            <h4 class="mb-4">Ny hos SaveAMeal? 😊 </h4>
+            <div class="alert alert-primary" role="alert">
+              <div className="mb-4">
+                {" "}
+                Venligst log ind for at gennemføre ordren.
               </div>
-              <div class="mb-3">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Indtast din email"
-                />
-                <div class="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
-                </div>
+              <div className="pb-2">
+                {" "}
+                <GoogleLoginHandler></GoogleLoginHandler>
               </div>
-              <h4 class="mb-3">Leveringsadresse</h4>
-              <div class="mb-3">
-                <label for="address">Addresse</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="address"
-                  placeholder="Indtast vejnavn"
-                  required
-                />
-                <div class="invalid-feedback">
-                  Please enter your shipping address.
-                </div>
+              <span className="ml-5 pl-3">Eller</span> <br></br>
+              <div className="pt-2">
+                <Link to="/sign-up" className="btn btn-primary">
+                  <UserPlus size={24}></UserPlus> Opret konto
+                </Link>
               </div>
-              <div class="mb-3">
-                <label for="zip">Postnummer</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="zip"
-                  placeholder="Indtast dit postnummer"
-                />
-              </div>
-
-              <hr class="mb-4" />
-
-              <div class="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  class="custom-control-input"
-                  id="save-info"
-                />
-                <label class="custom-control-label" for="save-info">
-                  Gem min leveringsadresse til næste ordre
-                </label>
-              </div>
-              <hr class="mb-4" />
-
-              <h4 class="mb-3">Payment</h4>
-
-              <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input
-                    id="credit"
-                    name="paymentMethod"
-                    type="radio"
-                    class="custom-control-input"
-                    checked
-                    required
-                  />
-                  <label class="custom-control-label" for="credit">
-                    Kort
-                  </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input
-                    id="mobilepay"
-                    name="paymentMethod"
-                    type="radio"
-                    class="custom-control-input"
-                    required
-                  />
-                  <label class="custom-control-label" for="mobilepay">
-                    Mobile pay
-                  </label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input
-                    id="paypal"
-                    name="paymentMethod"
-                    type="radio"
-                    class="custom-control-input"
-                    required
-                  />
-                  <label class="custom-control-label" for="paypal">
-                    PayPal
-                  </label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="cc-name">Navn på kort</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cc-name"
-                    placeholder=""
-                    required
-                  />
-                  <small class="text-muted">
-                    indtast navnet der står på dit kort
-                  </small>
-                  <div class="invalid-feedback">Name on card is required</div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="cc-number">Credit card number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cc-number"
-                    placeholder=""
-                    required
-                  />
-                  <div class="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3 mb-3">
-                  <label for="cc-expiration">Expiration</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cc-expiration"
-                    placeholder=""
-                    required
-                  />
-                  <div class="invalid-feedback">Expiration date required</div>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="cc-cvv">CVV</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="cc-cvv"
-                    placeholder=""
-                    required
-                  />
-                  <div class="invalid-feedback">Security code required</div>
-                </div>
-              </div>
-              <hr class="mb-4" />
-              <button class="btn btn-primary btn-lg btn-block" type="submit">
-                Bestil og betal med kort ({props.totalPrice}
-                {fullPrice})
-              </button>
-            </form>
+            </div>
           </div>
         )}
         {localStorage.getItem("loginEmail") !== null && (
