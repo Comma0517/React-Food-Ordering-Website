@@ -454,7 +454,7 @@ function CartFill(props) {
       </div>
       <footer class="my-5 pt-5 text-muted text-center text-small">
         <img
-          className=" mb-4 w-25 img-fluid"
+          className=" mb-4 w-25 img-fluid hd"
           src={imgPaymentOptions}
           alt="payment options"
         ></img>

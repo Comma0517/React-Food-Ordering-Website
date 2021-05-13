@@ -3,6 +3,7 @@ import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Profile.css";
 import ImgBg from "../../images/foodimage2cropped.jpg";
+import { LogOut } from "react-feather";
 export default function Profile() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
@@ -19,6 +20,18 @@ export default function Profile() {
       setError("Failed to log out");
     }
   }
+  function getGreeting() {
+    var today = new Date();
+    var curHr = today.getHours();
+    if (curHr < 12) {
+      return "good morning";
+    } else if (curHr < 18) {
+      return "Good Afternoon";
+    } else {
+      return "good evening";
+    }
+  }
+
   return (
     <>
       <div>
@@ -31,16 +44,20 @@ export default function Profile() {
               className="rounded-circle text-center"
               src={localStorage.getItem("loginImg")}
             ></img>
-            <h1 className="text-center">
-              {localStorage.getItem("loginFullname")}
-            </h1>
+            <h3 className="text-center">
+              {getGreeting()}, {localStorage.getItem("loginFullname")}
+            </h3>
             {error && <alert variant="danger">{error}</alert>}
             <p className="text-center text-secondary">
               {localStorage.getItem("loginEmail")}
             </p>
             <div className="mt-5 text-center">
-              <button onClick={handleLogout} className="profile__button">
-                Log ud
+              <button
+                onClick={handleLogout}
+                type="button"
+                className="btn btn-outline-danger border border-danger mt-5 mb-2"
+              >
+                Log ud <LogOut size={18}></LogOut>
               </button>
             </div>
           </div>

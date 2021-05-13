@@ -18,3 +18,12 @@
   border: 2px solid var(--clr-primary-4);
   transition-duration: 0.2s ease-out;
 }
+.btn-xlarge {
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}

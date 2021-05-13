@@ -38,3 +38,6 @@
   color: #fff;
   font-size: 100px;
 }
+.hd {
+  image-rendering: -webkit-optimize-contrast;
+}

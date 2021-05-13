@@ -203,3 +203,6 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.hd {
+  image-rendering: -webkit-optimize-contrast;
+}

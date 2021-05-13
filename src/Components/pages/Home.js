@@ -10,7 +10,7 @@ function Home() {
       <Cards />
       <div className=" text-center">
         <img
-          className="mb-4 w-25"
+          className="mb-4 w-25 hd"
           src={imgPaymentOptions}
           alt="payment options"
         ></img>
