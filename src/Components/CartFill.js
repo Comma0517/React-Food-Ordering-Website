@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { CartContext } from "./CartContext";
 import { MinusCircle, PlusCircle } from "react-feather";
+import imgPaymentOptions from "../../src/images/cards.jpg";
 function CartFill(props) {
   const [cart, setCart] = useContext(CartContext);
   const currency = "kr.";
@@ -183,7 +184,7 @@ function CartFill(props) {
                     class="custom-control-input"
                     required
                   />
-                  <label class="custom-control-label" for="debit">
+                  <label class="custom-control-label" for="mobilepay">
                     Mobile pay
                   </label>
                 </div>
@@ -358,7 +359,6 @@ function CartFill(props) {
                     name="paymentMethod"
                     type="radio"
                     class="custom-control-input"
-                    checked
                     required
                   />
                   <label class="custom-control-label" for="credit">
@@ -373,8 +373,8 @@ function CartFill(props) {
                     class="custom-control-input"
                     required
                   />
-                  <label class="custom-control-label" for="debit">
-                    Mobile pay
+                  <label class="custom-control-label" for="mobilepay">
+                    Mobile Pay
                   </label>
                 </div>
                 <div class="custom-control custom-radio">
@@ -453,7 +453,9 @@ function CartFill(props) {
         )}
       </div>
       <footer class="my-5 pt-5 text-muted text-center text-small">
+        <img className=" mb-4 w-25 img-fluid" src={imgPaymentOptions}></img>
         <p class="mb-1">&copy; Save-a-meal</p>
+
         <ul class="list-inline">
           <li class="list-inline-item">
             <a href="#">Privacy</a>
