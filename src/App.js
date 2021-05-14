@@ -15,7 +15,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import ScrollToTop from "./Components/ScrollToTop";
 import ReactGA from "react-ga";
 
-const App = ({}) => {
+const App = () => {
   useEffect(() => {
     ReactGA.initialize("UA-191807319-1");
     ReactGA.pageview(window.location.pathname + window.location.search);

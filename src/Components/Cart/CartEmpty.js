@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 function CartEmpty() {
   return (
@@ -15,6 +14,7 @@ function CartEmpty() {
                   width="130"
                   height="130"
                   class="img-fluid mb-4 mr-3"
+                  alt="cart Is Empty"
                 />
                 <h3>
                   <strong>Din kurv er tom</strong>

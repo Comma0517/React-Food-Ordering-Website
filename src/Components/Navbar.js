@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, { useState, useEffect, useContext } from "react";
 import { Button } from "./Button";
 import { ButtonCart } from "./ButtonCart";
@@ -5,12 +6,11 @@ import { ButtonProfile } from "./ButtonProfile";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
-import { useAuth } from "./AuthContext";
 import ReactGA from "react-ga";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [buttonText, setButtonText] = useState("Log ind");
+  const [buttonText] = useState("Log ind");
   // eslint-disable-next-line
   const [cart] = useContext(CartContext);
   const totalPrice = cart.reduce(
@@ -22,7 +22,6 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
   const deliveryCost = 29;
   const currency = "kr.";
-  const { currentUser } = useAuth();
 
   const showButton = () => {
     if (window.innerWidth <= 960) {

@@ -1,19 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
 import { CartContext } from "../CartContext";
-import { useAuth } from "../AuthContext";
-import { useHistory } from "react-router-dom";
+
 import "./Cart.css";
 import "../UploadForm.css";
 import CartEmpty from "../Cart/CartEmpty";
-import { MinusCircle, PlusCircle } from "react-feather";
 import CartFill from "../CartFill";
 
 function Cart() {
   // eslint-disable-next-line
   const [cart, setCart] = useContext(CartContext);
-  const { currentUser, logout } = useAuth();
-  const history = useHistory();
   const deliveryCost = 29;
+  // eslint-disable-next-line
   let totalPrice =
     cart.reduce(
       (acc, curr) => acc + parseInt(curr.price * curr.qty),
@@ -29,11 +27,7 @@ function Cart() {
     const newCart = cart.filter((Cart) => Cart.id !== id);
     setCart(newCart);
   };
-  function handleOrder() {
-    if (!currentUser) {
-      history.push("/login");
-    }
-  }
+
   function clearCart() {
     setCart([]);
   }

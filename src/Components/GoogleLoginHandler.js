@@ -1,10 +1,8 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
-import { useAuth } from "./AuthContext";
 
 function GoogleLoginHandler() {
-  const { currentUser } = useAuth();
   const history = useHistory();
   const returnSuccess = (response) => {
     localStorage.setItem("loginEmail", response.profileObj.email);

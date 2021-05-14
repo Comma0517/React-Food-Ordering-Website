@@ -44,7 +44,7 @@ const useStorage = (
         });
         setUrl(url);
       }
-    );
+    ); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [file]);
 
   return { progress, url, error };

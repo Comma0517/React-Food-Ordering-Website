@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "./CartContext";
-import { ExternalLink, MinusCircle, PlusCircle, UserPlus } from "react-feather";
+import { MinusCircle, PlusCircle, UserPlus } from "react-feather";
 import imgPaymentOptions from "../../src/images/cards.jpg";
 import GoogleLoginHandler from "./GoogleLoginHandler";
 import { Link } from "react-router-dom";
