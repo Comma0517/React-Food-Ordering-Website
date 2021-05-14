@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useAuth } from "../AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./Profile.css";
 import ImgBg from "../../images/foodimage2cropped.jpg";
 import { LogOut } from "react-feather";
 export default function Profile() {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const history = useHistory();
   async function handleLogout() {
     setError("");
@@ -35,7 +35,7 @@ export default function Profile() {
   return (
     <>
       <div>
-        <img src={ImgBg} className="w-100 "></img>
+        <img src={ImgBg} className="w-100 " alt="foodBackground"></img>
       </div>
       <div className="container shadow-lg p-3 mb-5 bg-white rounded">
         <div className="mt-5">
@@ -43,6 +43,7 @@ export default function Profile() {
             <img
               className="rounded-circle text-center"
               src={localStorage.getItem("loginImg")}
+              alt="profilePicture"
             ></img>
             <h3 className="text-center">
               {getGreeting()}, {localStorage.getItem("loginFirstName")}
