@@ -56,15 +56,28 @@ function Navbar() {
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li>
-              <Link
-                to="/login"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                <i class="fas fa-user"></i>
-                <br />
-                Log ind
-              </Link>
+              {!localStorage.getItem("loginEmail") && (
+                <Link
+                  to="/login"
+                  className="nav-links-mobile"
+                  onClick={closeMobileMenu}
+                >
+                  <i class="fas fa-user"></i>
+                  <br />
+                  Log ind
+                </Link>
+              )}
+              {localStorage.getItem("loginEmail") && (
+                <Link
+                  to="/profile"
+                  className="nav-links-mobile"
+                  onClick={closeMobileMenu}
+                >
+                  <i class="fas fa-user"></i>
+                  <br />
+                  {localStorage.getItem("loginFullname")}
+                </Link>
+              )}
             </li>
             <li>
               <Link
