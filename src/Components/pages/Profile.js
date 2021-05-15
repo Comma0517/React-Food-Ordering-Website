@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../AuthContext";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Profile.css";
 import ImgBg from "../../images/foodimage2cropped.jpg";
 import { LogOut } from "react-feather";
@@ -50,9 +50,9 @@ export default function Profile() {
             </h3>
             {error && <alert variant="danger">{error}</alert>}
             <p className="text-center text-secondary">Føler du dig sulten?</p>
-            <a href="/" className="btn btn-primary">
+            <Link to="/" className="btn btn-primary">
               Gå til menuen
-            </a>
+            </Link>
             <div className="mt-5 text-center">
               <button
                 onClick={handleLogout}
