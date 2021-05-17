@@ -96,7 +96,7 @@ function Navbar() {
           {!currentUser && button && (
             <Button buttonStyle="btn--outline">
               {" "}
-              <i class="fas fa-user"></i> {buttonText}
+              <i class="fas fa-user"></i> Log ind
             </Button>
           )}
           {currentUser && button && (

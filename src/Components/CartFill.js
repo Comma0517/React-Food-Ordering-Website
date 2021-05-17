@@ -4,12 +4,14 @@ import { MinusCircle, PlusCircle, UserPlus } from "react-feather";
 import imgPaymentOptions from "../../src/images/cards.jpg";
 import GoogleLoginHandler from "./GoogleLoginHandler";
 import { Link } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 function CartFill(props) {
   const [cart] = useContext(CartContext);
   const currency = "kr.";
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
+  const [currentUser, setCurrentUser] = useContext(UserContext);
 
   return (
     <div className="container mt-5">
@@ -81,7 +83,7 @@ function CartFill(props) {
             </div>
           </form>
         </div>
-        {localStorage.getItem("loginEmail") === null && (
+        {!currentUser && (
           <div class="col-md-8 order-md-1">
             <h4 class="mb-4">Ny hos SaveAMeal? 😊 </h4>
             <div class="alert alert-primary" role="alert">
@@ -102,7 +104,7 @@ function CartFill(props) {
             </div>
           </div>
         )}
-        {localStorage.getItem("loginEmail") !== null && (
+        {currentUser && (
           <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Personlige oplysninger</h4>
             <form class="needs-validation" novalidate>
