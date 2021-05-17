@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useAuth } from "../AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Profile.css";
 import ImgBg from "../../images/foodimage2cropped.jpg";
 import { LogOut } from "react-feather";
+import { UserContext } from "../UserContext";
 export default function Profile() {
   const [error, setError] = useState("");
   const { logout } = useAuth();
   const history = useHistory();
+  const [currentUser, setCurrentUser] = useContext(UserContext);
   async function handleLogout() {
     setError("");
     try {
       await logout();
+      setCurrentUser();
       localStorage.removeItem("loginEmail");
       localStorage.removeItem("loginImg");
       localStorage.removeItem("loginFullname");
+      localStorage.removeItem("loginFirstName");
+      localStorage.removeItem("loginLastname");
       history.push("/login");
     } catch {
       setError("Failed to log out");

@@ -298,7 +298,6 @@ function CartFill(props) {
           src={imgPaymentOptions}
           alt="payment options"
         ></img>
-        <p class="mb-1">&copy; Save-a-meal</p>
 
         <ul class="list-inline">
           <li class="list-inline-item">

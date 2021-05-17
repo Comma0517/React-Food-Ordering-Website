@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
+import { UserContext } from "./UserContext";
 
 function GoogleLoginHandler() {
+  const [currentUser, setCurrentUser] = useContext(UserContext);
   const history = useHistory();
   const returnSuccess = (response) => {
+    setCurrentUser(response.profileObj.name);
     localStorage.setItem("loginEmail", response.profileObj.email);
     localStorage.setItem("loginImg", response.profileObj.imageUrl);
     localStorage.setItem("loginFullname", response.profileObj.name);
     localStorage.setItem("loginFirstName", response.profileObj.givenName);
     localStorage.setItem("loginLastName", response.profileObj.familyName);
     history.push("/cart");
-    console.log(localStorage.getItem("loginEmail"));
-    console.log(response);
+    // console.log(localStorage.getItem("loginEmail"));
+    //  console.log(response);
   };
   const returnFail = (response) => {
     console.log("error");

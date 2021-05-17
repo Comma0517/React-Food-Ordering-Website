@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { CartContext } from "./CartContext";
 import ReactGA from "react-ga";
+import { UserContext } from "./UserContext";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [buttonText] = useState("Log ind");
+  let [buttonText] = useState("Log ind");
   // eslint-disable-next-line
   const [cart] = useContext(CartContext);
+  const [currentUser] = useContext(UserContext);
   const totalPrice = cart.reduce(
     (acc, curr) => acc + parseInt(curr.price * curr.qty),
     0
@@ -91,16 +93,15 @@ function Navbar() {
               </Link>
             </li>
           </ul>
-          {!localStorage.getItem("loginEmail") && button && (
+          {!currentUser && button && (
             <Button buttonStyle="btn--outline">
               {" "}
               <i class="fas fa-user"></i> {buttonText}
             </Button>
           )}
-          {localStorage.getItem("loginEmail") && button && (
+          {currentUser && button && (
             <ButtonProfile buttonStyle="btn--outline">
-              {localStorage.getItem("loginFullname") !== null &&
-                localStorage.getItem("loginFullname")}
+              {currentUser}
             </ButtonProfile>
           )}
 
