@@ -51,7 +51,7 @@ function Navbar() {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             SaveAMeal
-            <i class="fas fa-utensils" />
+            <i className="fas fa-utensils" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
@@ -64,7 +64,7 @@ function Navbar() {
                   className="nav-links-mobile"
                   onClick={closeMobileMenu}
                 >
-                  <i class="fas fa-user"></i>
+                  <i className="fas fa-user"></i>
                   <br />
                   Log ind
                 </Link>
@@ -75,7 +75,7 @@ function Navbar() {
                   className="nav-links-mobile"
                   onClick={closeMobileMenu}
                 >
-                  <i class="fas fa-user"></i>
+                  <i className="fas fa-user"></i>
                   <br />
                   {localStorage.getItem("loginFullname")}
                 </Link>
@@ -87,7 +87,7 @@ function Navbar() {
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
-                <i class="fas fa-shopping-cart"></i>
+                <i className="fas fa-shopping-cart"></i>
                 <br />
                 {cart != 0 && totalPrice + deliveryCost + currency}
               </Link>
@@ -96,7 +96,7 @@ function Navbar() {
           {!currentUser && button && (
             <Button buttonStyle="btn--outline">
               {" "}
-              <i class="fas fa-user"></i> Log ind
+              <i className="fas fa-user"></i> Log ind
             </Button>
           )}
           {currentUser && button && (
@@ -109,7 +109,7 @@ function Navbar() {
             <ButtonCart onClick={handleCartClick} buttonStyle="btn--outline">
               {" "}
               {cart != 0 && cart.length}
-              <i class="fas fa-shopping-cart"></i>{" "}
+              <i className="fas fa-shopping-cart"></i>{" "}
               {cart != 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
           )}

@@ -25,83 +25,83 @@ function Footer() {
           </form>
         </div>
       </section>
-      <div class="footer-links">
+      <div className="footer-links">
         <div className="footer-link-wrapper">
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Om os</h2>
             <Link to="/sign-up">Hvordan det virker</Link>
             <Link to={link}>Terms of Service</Link>
           </div>
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Kontakt os</h2>
             <Link to={link}>Kontakt</Link>
             <Link to={link}>Support</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
-          <div class="footer-link-items">
+          <div className="footer-link-items">
             <h2>Videoer</h2>
             <Link to={link}>På vej..</Link>
           </div>
         </div>
       </div>
-      <section class="social-media">
-        <div class="social-media-wrap">
-          <div class="footer-logo">
+      <section className="social-media">
+        <div className="social-media-wrap">
+          <div className="footer-logo">
             <Link to="/" className="social-logo">
               SaveAMeal
-              <i class="fas fa-utensils" />
+              <i className="fas fa-utensils" />
             </Link>
           </div>
-          <small class="website-rights">Martin Lykke © 2021</small>
-          <small class="website-rights">
-            Made with React <i class="fab fa-react"></i>
+          <small className="website-rights">Martin Lykke © 2021</small>
+          <small className="website-rights">
+            Made with React <i className="fab fa-react"></i>
           </small>
-          <div class="social-icons">
+          <div className="social-icons">
             <a
-              class="social-icon-link facebook"
+              className="social-icon-link facebook"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
             >
-              <i class="fab fa-facebook-f" />
+              <i className="fab fa-facebook-f" />
             </a>
             <a
-              class="social-icon-link instagram"
+              className="social-icon-link instagram"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
             >
-              <i class="fab fa-instagram" />
+              <i className="fab fa-instagram" />
             </a>
             <a
-              class="social-icon-link youtube"
+              className="social-icon-link youtube"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Youtube"
             >
-              <i class="fab fa-youtube" />
+              <i className="fab fa-youtube" />
             </a>
             <a
-              class="social-icon-link twitter"
+              className="social-icon-link twitter"
               href={link}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
             >
-              <i class="fab fa-twitter" />
+              <i className="fab fa-twitter" />
             </a>
 
             <a
-              class="social-icon-link"
+              className="social-icon-link"
               target="_blank"
               rel="noopener noreferrer"
               href={link}
             >
-              <i class="fab fa-linkedin" />
+              <i className="fab fa-linkedin" />
             </a>
           </div>
         </div>
