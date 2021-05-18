@@ -11,7 +11,7 @@ function CartFill(props) {
   const currency = "kr.";
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
-  const [currentUser, setCurrentUser] = useContext(UserContext);
+  const [currentUser] = useContext(UserContext);
 
   return (
     <div className="container mt-5">

@@ -11,7 +11,7 @@ import { UserContext } from "./UserContext";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  let [buttonText] = useState("Log ind");
+
   // eslint-disable-next-line
   const [cart] = useContext(CartContext);
   const [currentUser] = useContext(UserContext);

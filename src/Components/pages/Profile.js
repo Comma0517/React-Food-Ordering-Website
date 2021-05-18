@@ -9,7 +9,7 @@ export default function Profile() {
   const [error, setError] = useState("");
   const { logout } = useAuth();
   const history = useHistory();
-  const [currentUser, setCurrentUser] = useContext(UserContext);
+  const [setCurrentUser] = useContext(UserContext);
   async function handleLogout() {
     setError("");
     try {
