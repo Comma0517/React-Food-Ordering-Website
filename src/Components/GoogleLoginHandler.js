@@ -5,7 +5,7 @@ import { UserContext } from "./UserContext";
 import { useLocation } from "react-router-dom";
 
 function GoogleLoginHandler() {
-  const [setCurrentUser] = useContext(UserContext);
+  const [, setCurrentUser] = useContext(UserContext);
   const history = useHistory();
   const location = useLocation();
   const returnSuccess = (response) => {

@@ -9,7 +9,7 @@ export default function Profile() {
   const [error, setError] = useState("");
   const { logout } = useAuth();
   const history = useHistory();
-  const [setCurrentUser] = useContext(UserContext);
+  const [, setCurrentUser] = useContext(UserContext);
   async function handleLogout() {
     setError("");
     try {
@@ -22,7 +22,7 @@ export default function Profile() {
       localStorage.removeItem("loginLastname");
       history.push("/login");
     } catch {
-      setError("Failed to log out");
+      setError("Kunne ikke logge ud.");
     }
   }
   function getGreeting() {

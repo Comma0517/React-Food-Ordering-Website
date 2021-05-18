@@ -15,10 +15,13 @@ function Navbar() {
   // eslint-disable-next-line
   const [cart] = useContext(CartContext);
   const [currentUser] = useContext(UserContext);
-  const totalPrice = cart.reduce(
-    (acc, curr) => acc + parseInt(curr.price * curr.qty),
-    0
-  );
+  let totalPrice = 0;
+  if (cart) {
+    totalPrice = cart.reduce(
+      (acc, curr) => acc + parseInt(curr.price * curr.qty),
+      0
+    );
+  }
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);

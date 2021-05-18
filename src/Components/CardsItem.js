@@ -45,21 +45,21 @@ function CardItem(props) {
             <img className="cards__item__img" alt="Food" src={props.src} />
           </figure>
           <div className="cards__item__info">
-            <h4 className="cards__item__text">
+            <h3 className="cards__item__text">
               {props.text}
-              <h3 className="cards__item__price">{props.price},-</h3>
-            </h4>
+              <h4 className="cards__item__price">{props.price},-</h4>
+            </h3>
             <p className="item-text">{props.desc}</p>
             <div>
               <button onClick={addToCart} className="cards__item_button">
-                <i class="fas fa-plus"></i>
+                <i className="fas fa-plus"></i>
               </button>
               {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
                 <span
                   onClick={removeCard}
                   className="cards__item_button_remove"
                 >
-                  <i class="fas fa-trash fa-2x"></i>
+                  <i className="fas fa-trash fa-2x"></i>
                 </span>
               )}
             </div>

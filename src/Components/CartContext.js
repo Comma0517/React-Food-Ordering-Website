@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 export const CartContext = React.createContext();
 export const CartProvider = (props) => {
-  const [cart, setCart] = useState(() =>
-    getLocalStorage("cart", getLocalStorage("cart"))
-  );
+  const [cart, setCart] = useState(() => getLocalStorage("cart", ""));
   function setLocalStorage(key, value) {
     try {
       window.localStorage.setItem(key, JSON.stringify(value));

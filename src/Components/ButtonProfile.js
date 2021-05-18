@@ -27,7 +27,7 @@ export const ButtonProfile = ({
           onClick={onClick}
           type={type}
         >
-          <i class="fas fa-user"></i> {children}
+          <i className="fas fa-user"></i> {children}
           <br></br>
         </button>
       </Link>
