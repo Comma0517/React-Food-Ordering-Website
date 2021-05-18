@@ -27,6 +27,7 @@
   font-size: 2rem;
   display: flex;
   align-items: center;
+  font-family: "PT Sans", sans-serif;
 }
 
 .navbar-logo:hover {

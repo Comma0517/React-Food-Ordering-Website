@@ -101,7 +101,7 @@ function Navbar() {
           )}
           {currentUser && button && (
             <ButtonProfile buttonStyle="btn--outline">
-              {currentUser}
+              <span>{currentUser}</span>
             </ButtonProfile>
           )}
 

@@ -7,6 +7,7 @@ export const HeroContainer = styled.div`
   height: 100vh;
   background-position: center;
   background-size: cover;
+  font-family: "PT Sans", sans-serif;
 `;
 
 export const HeroContent = styled.div`
@@ -46,17 +47,6 @@ export const HeroP = styled.p`
 `;
 
 export const HeroBtn = styled.button`
-  font-size: 1.4rem;
-  padding: 1rem 4rem;
-  border: none;
-  background: var(--clr-primary-4);
-  color: #fff;
-  transition: 0.2s ease-out;
-
-  &:hover {
-    background: #fff;
-    transition: 0.2s ease-out;
-    cursor: pointer;
-    color: var(--clr-primary-4);
-  }
+  font-size: 1.6rem;
+  padding: 1rem 1rem;
 `;

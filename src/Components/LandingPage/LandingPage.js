@@ -8,6 +8,7 @@ import {
   HeroBtn,
 } from "./LandingPageElements";
 import ReactGA from "react-ga";
+import { ArrowDownCircle } from "react-feather";
 function LandingPage() {
   function navigateToMenu() {
     //window.scrollBy(0, 1400);
@@ -42,7 +43,13 @@ function LandingPage() {
         <HeroItems>
           <HeroH1>Bæredygtig mad</HeroH1>
           <HeroP>Leveret lige til døren</HeroP>
-          <HeroBtn onClick={navigateToMenu}>Se menu</HeroBtn>
+          <HeroBtn onClick={navigateToMenu} className="btn btn-primary">
+            <span className="mr-2 p-5"> Se menuen </span>
+
+            <span className="">
+              <ArrowDownCircle size={40} />
+            </span>
+          </HeroBtn>
         </HeroItems>
       </HeroContent>
     </HeroContainer>

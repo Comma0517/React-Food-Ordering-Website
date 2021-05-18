@@ -130,6 +130,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+  font-family: "PT Sans", sans-serif;
 }
 
 .website-rights {
