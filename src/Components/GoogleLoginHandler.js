@@ -15,7 +15,6 @@ function GoogleLoginHandler() {
     localStorage.setItem("loginFullname", response.profileObj.name);
     localStorage.setItem("loginFirstName", response.profileObj.givenName);
     localStorage.setItem("loginLastName", response.profileObj.familyName);
-
     let path = location.pathname;
     if (path === "/login") {
       history.push("/cart");
@@ -25,6 +24,7 @@ function GoogleLoginHandler() {
   };
   const returnFail = (response) => {
     console.log("error");
+    alert("Could not log in. Please check if you have cookies enabled.");
   };
 
   return (
