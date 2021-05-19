@@ -14,11 +14,10 @@ function Cart() {
   // eslint-disable-next-line
   let totalPrice = 0;
   if (cart) {
-    totalPrice =
-      cart.reduce(
-        (acc, curr) => acc + parseInt(curr.price * curr.qty),
-        deliveryCost
-      ) + deliveryCost;
+    totalPrice = cart.reduce(
+      (acc, curr) => acc + parseInt(curr.price * curr.qty),
+      deliveryCost
+    );
   }
 
   useEffect(() => {

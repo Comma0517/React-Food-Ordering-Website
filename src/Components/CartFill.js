@@ -12,7 +12,7 @@ function CartFill(props) {
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
   const [currentUser] = useContext(UserContext);
-
+  const deliveryCost = 29;
   return (
     <div className="container mt-5">
       <div className="row">
@@ -53,10 +53,15 @@ function CartFill(props) {
                 </span>
               </li>
             ))}
-
+            <li className="list-group-item d-flex justify-content-between bg-light">
+              <div className="">
+                <h6 className="my-0">Levering</h6>
+              </div>
+              <span className="text-secondary">29{fullPrice}</span>
+            </li>
             <li className="list-group-item d-flex justify-content-between bg-light">
               <div className="text-success">
-                <h6 className="my-0">Promo code</h6>
+                <h6 className="my-0">Tilbudskode</h6>
                 <small>saveameal</small>
               </div>
               <span className="text-success">-14{fullPrice}</span>
