@@ -12,15 +12,21 @@ function Cart() {
   const [cart, setCart] = useContext(CartContext);
   const deliveryCost = 29;
   // eslint-disable-next-line
-  let totalPrice =
-    cart.reduce(
-      (acc, curr) => acc + parseInt(curr.price * curr.qty),
-      deliveryCost
-    ) + deliveryCost;
+  let totalPrice = 0;
+  if (cart) {
+    totalPrice =
+      cart.reduce(
+        (acc, curr) => acc + parseInt(curr.price * curr.qty),
+        deliveryCost
+      ) + deliveryCost;
+  }
 
   useEffect(() => {
-    totalPrice =
-      cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) + deliveryCost;
+    if (cart) {
+      totalPrice =
+        cart.reduce((acc, curr) => acc + parseInt(curr.price), 0) +
+        deliveryCost;
+    }
   }, [cart]);
 
   const removeFromOrder = (id) => {

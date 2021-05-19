@@ -14,7 +14,10 @@ function CardItem(props) {
       id: Math.random().toString(36).substr(2, 9),
       qty: 1,
     };
-    const exists = cart.find((x) => x.name === foodItem.name);
+    let exists = false;
+    if (cart) {
+      exists = cart.find((x) => x.name === foodItem.name);
+    }
     if (exists) {
       setCart(
         cart.map((x) =>
