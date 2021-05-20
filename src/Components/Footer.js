@@ -25,23 +25,23 @@ function Footer() {
           </form>
         </div>
       </section>
+
       <div className="footer-links">
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>Om os</h2>
-            <Link to="/sign-up">Hvordan det virker</Link>
-            <Link to={link}>Terms of Service</Link>
           </div>
           <div className="footer-link-items">
-            <h2>Kontakt os</h2>
-            <Link to={link}>Kontakt</Link>
-            <Link to={link}>Support</Link>
+            <h2>
+              <Link to="/ContactUs">Kontakt os</Link>
+            </h2>
+            <Link to="/ContactUs">Kontakt</Link>
           </div>
         </div>
         <div className="footer-link-wrapper">
           <div className="footer-link-items">
             <h2>Videoer</h2>
-            <Link to={link}>På vej..</Link>
+            <p className="text-light">På vej..</p>
           </div>
         </div>
       </div>

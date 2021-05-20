@@ -63,30 +63,33 @@ function CartFill(props) {
             </li>
             <li className="list-group-item d-flex justify-content-between bg-light">
               <div className="text-success">
-                <h6 className="my-0">Tilbudskode</h6>
-                <small>saveameal - 5%</small>
+                <h6 className="my-0">Rabatkode</h6>
+                <small>Velkomst rabat - 10%</small>
               </div>
               <span className="text-success">
                 {" "}
-                {Math.trunc(props.totalPrice * 0.05)}
+                {Math.trunc(props.totalPrice * 0.1)}
                 {fullPrice}
               </span>
             </li>
             <li className="list-group-item d-flex justify-content-between">
               <span>Total (DKK)</span>
               <strong>
-                {Math.trunc(props.totalPrice * 0.95)}
+                {Math.trunc(props.totalPrice * 0.9)}
                 {fullPrice}
               </strong>
             </li>
           </ul>
 
           <form className="card p-2">
+            <small className="text-secondary mb-1">
+              Har du fået en Rabatkode? Indtast den her
+            </small>
             <div className="input-group">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Promo code"
+                placeholder="Indtast rabatkode"
               />
               <div className="input-group-append">
                 <button type="submit" className="btn btn-primary">

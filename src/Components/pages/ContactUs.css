@@ -1,0 +1,17 @@
+.blackfade {
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.imgcontainer {
+  position: relative;
+  text-align: center;
+}
+.font {
+  font-family: PT Serif Caption;
+}

@@ -15,6 +15,7 @@ import PrivateRoute from "./Components/PrivateRoute";
 import ScrollToTop from "./Components/ScrollToTop";
 import ReactGA from "react-ga";
 import { UserProvider } from "./Components/UserContext";
+import ContactUs from "./Components/pages/ContactUs";
 
 const App = () => {
   useEffect(() => {
@@ -36,6 +37,7 @@ const App = () => {
                 <Route path="/login" exact component={Login} />
                 <PrivateRoute path="/profile" exact component={Profile} />
                 <Route path="/cart" exact component={Cart} />
+                <Route path="/ContactUs" exact component={ContactUs} />
               </AuthProvider>
             </Switch>
           </CartProvider>
