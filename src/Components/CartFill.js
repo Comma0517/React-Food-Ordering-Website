@@ -13,15 +13,17 @@ function CartFill(props) {
   const fullPrice = zeroes + currency;
   const [currentUser] = useContext(UserContext);
   const deliveryCost = 29;
+  let qty = 0;
+  if (cart) {
+    qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
+  }
   return (
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-4 order-md-2 mb-4">
           <h4 className="d-flex justify-content-between align-items-center mb-3">
             <span className="text-muted">Din kurv</span>
-            <span className="badge badge-primary badge-pill ">
-              {cart.length}
-            </span>
+            <span className="badge badge-primary badge-pill ">{qty}</span>
           </h4>
           <ul className="list-group mb-3">
             {cart.map((doc) => (
@@ -62,14 +64,18 @@ function CartFill(props) {
             <li className="list-group-item d-flex justify-content-between bg-light">
               <div className="text-success">
                 <h6 className="my-0">Tilbudskode</h6>
-                <small>saveameal</small>
+                <small>saveameal - 5%</small>
               </div>
-              <span className="text-success">-14{fullPrice}</span>
+              <span className="text-success">
+                {" "}
+                {Math.trunc(props.totalPrice * 0.05)}
+                {fullPrice}
+              </span>
             </li>
             <li className="list-group-item d-flex justify-content-between">
               <span>Total (DKK)</span>
               <strong>
-                {props.totalPrice}
+                {Math.trunc(props.totalPrice * 0.95)}
                 {fullPrice}
               </strong>
             </li>

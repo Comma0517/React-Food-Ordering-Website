@@ -16,11 +16,13 @@ function Navbar() {
   const [cart] = useContext(CartContext);
   const [currentUser] = useContext(UserContext);
   let totalPrice = 0;
+  let qty = 0;
   if (cart) {
     totalPrice = cart.reduce(
       (acc, curr) => acc + parseInt(curr.price * curr.qty),
       0
     );
+    qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
   }
 
   const handleClick = () => setClick(!click);
@@ -111,7 +113,7 @@ function Navbar() {
           {button && (
             <ButtonCart onClick={handleCartClick} buttonStyle="btn--outline">
               {" "}
-              {cart != 0 && cart.length}
+              {cart != 0 && qty}
               <i className="fas fa-shopping-cart"></i>{" "}
               {cart != 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
