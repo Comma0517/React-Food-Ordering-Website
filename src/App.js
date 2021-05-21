@@ -8,13 +8,13 @@ import SignUp from "./Components/pages/Signup";
 import Profile from "./Components/pages/Profile";
 import Login from "./Components/Login";
 import Cart from "./Components/pages/Cart";
-import { AuthProvider } from "./Components/AuthContext";
-import { CartProvider } from "./Components/CartContext";
+import { AuthProvider } from "./Contexts/AuthContext";
+import { CartProvider } from "./Contexts/CartContext";
 import Footer from "./Components/Footer";
 import PrivateRoute from "./Components/PrivateRoute";
 import ScrollToTop from "./Components/ScrollToTop";
 import ReactGA from "react-ga";
-import { UserProvider } from "./Components/UserContext";
+import { UserProvider } from "./Contexts/UserContext";
 import ContactUs from "./Components/pages/ContactUs";
 
 const App = () => {

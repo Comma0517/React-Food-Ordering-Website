@@ -1,13 +1,13 @@
 /* eslint-disable eqeqeq */
 import React, { useState, useEffect, useContext } from "react";
-import { Button } from "./Button";
-import { ButtonCart } from "./ButtonCart";
-import { ButtonProfile } from "./ButtonProfile";
+import { Button } from "./Buttons/Button";
+import { ButtonCart } from "./Buttons/ButtonCart";
+import { ButtonProfile } from "./Buttons/ButtonProfile";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../Contexts/CartContext";
 import ReactGA from "react-ga";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../Contexts/UserContext";
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);

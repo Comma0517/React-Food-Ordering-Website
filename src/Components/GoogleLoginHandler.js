@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import GoogleLogin from "react-google-login";
 import { useHistory } from "react-router";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../Contexts/UserContext";
 import { useLocation } from "react-router-dom";
 
 function GoogleLoginHandler() {

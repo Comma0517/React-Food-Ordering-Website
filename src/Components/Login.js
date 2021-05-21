@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Alert } from "react-bootstrap";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../Contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Form.css";
 import GoogleLoginHandler from "./GoogleLoginHandler";

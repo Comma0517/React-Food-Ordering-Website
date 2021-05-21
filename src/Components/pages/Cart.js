@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from "react";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../../Contexts/CartContext";
 
 import "./Cart.css";
 import "../UploadForm.css";

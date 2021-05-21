@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../Contexts/CartContext";
 import { MinusCircle, PlusCircle, UserPlus } from "react-feather";
 import imgPaymentOptions from "../../src/images/cards.jpg";
 import GoogleLoginHandler from "./GoogleLoginHandler";
 import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import { UserContext } from "../Contexts/UserContext";
 
 function CartFill(props) {
   const [cart] = useContext(CartContext);

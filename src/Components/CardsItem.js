@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../Contexts/CartContext";
 import { projectFirestore } from "../Firebase";
 import ReactGA from "react-ga";
 

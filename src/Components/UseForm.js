@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../Components/AuthContext";
+import { useAuth } from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 
 const useForm = (callback, validate) => {

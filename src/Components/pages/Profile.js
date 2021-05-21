@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../../Contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import "./Profile.css";
 import ImgBg from "../../images/foodimage2cropped.jpg";
 import { LogOut } from "react-feather";
-import { UserContext } from "../UserContext";
+import { UserContext } from "../../Contexts/UserContext";
 export default function Profile() {
   const [error, setError] = useState("");
   const { logout } = useAuth();
