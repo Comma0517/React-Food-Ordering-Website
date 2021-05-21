@@ -12,7 +12,7 @@ function CartFill(props) {
   const zeroes = ",00 ";
   const fullPrice = zeroes + currency;
   const [currentUser] = useContext(UserContext);
-  const deliveryCost = 29;
+
   let qty = 0;
   if (cart) {
     qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
@@ -105,7 +105,7 @@ function CartFill(props) {
             <div className="alert alert-primary" role="alert">
               <div className="mb-4">
                 {" "}
-                Venligst log ind for at gennemføre ordren.
+                Venligst log ind htmlFor at gennemføre ordren.
               </div>
               <div className="pb-2">
                 {" "}
@@ -123,10 +123,10 @@ function CartFill(props) {
         {currentUser && (
           <div className="col-md-8 order-md-1">
             <h4 className="mb-3">Personlige oplysninger</h4>
-            <form className="needs-validation" novalidate>
+            <form className="needs-validation" noValidate>
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label for="firstName">Navn</label>
+                  <label htmlFor="firstName">Navn</label>
                   <input
                     type="text"
                     className="form-control"
@@ -141,7 +141,7 @@ function CartFill(props) {
                   </div>
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label for="lastName">Efternavn</label>
+                  <label htmlFor="lastName">Efternavn</label>
                   <input
                     type="text"
                     className="form-control"
@@ -157,7 +157,7 @@ function CartFill(props) {
                 </div>
               </div>
               <div className="mb-3">
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   className="form-control"
@@ -167,12 +167,12 @@ function CartFill(props) {
                   style={{ backgroundColor: "var(--clr-grey-10)" }}
                 />
                 <div className="invalid-feedback">
-                  Please enter a valid email address for shipping updates.
+                  Please enter a valid email address htmlFor shipping updates.
                 </div>
               </div>
               <h4 className="mb-3">Leveringsadresse</h4>
               <div className="mb-3">
-                <label for="address">Addresse</label>
+                <label htmlFor="address">Addresse</label>
                 <input
                   type="text"
                   className="form-control"
@@ -185,7 +185,7 @@ function CartFill(props) {
                 </div>
               </div>
               <div className="mb-3">
-                <label for="zip">Postnummer</label>
+                <label htmlFor="zip">Postnummer</label>
                 <input
                   type="text"
                   className="form-control"
@@ -202,7 +202,7 @@ function CartFill(props) {
                   className="custom-control-input"
                   id="save-info"
                 />
-                <label className="custom-control-label" for="save-info">
+                <label className="custom-control-label" htmlFor="save-info">
                   Gem min leveringsadresse til næste ordre
                 </label>
               </div>
@@ -219,7 +219,7 @@ function CartFill(props) {
                     className="custom-control-input"
                     required
                   />
-                  <label className="custom-control-label" for="credit">
+                  <label className="custom-control-label" htmlFor="credit">
                     Kort
                   </label>
                 </div>
@@ -231,7 +231,7 @@ function CartFill(props) {
                     className="custom-control-input"
                     required
                   />
-                  <label className="custom-control-label" for="mobilepay">
+                  <label className="custom-control-label" htmlFor="mobilepay">
                     Mobile Pay
                   </label>
                 </div>
@@ -243,14 +243,14 @@ function CartFill(props) {
                     className="custom-control-input"
                     required
                   />
-                  <label className="custom-control-label" for="paypal">
+                  <label className="custom-control-label" htmlFor="paypal">
                     PayPal
                   </label>
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-6 mb-3">
-                  <label for="cc-name">Navn på kort</label>
+                  <label htmlFor="cc-name">Navn på kort</label>
                   <input
                     type="text"
                     className="form-control"
@@ -266,7 +266,7 @@ function CartFill(props) {
                   </div>
                 </div>
                 <div className="col-md-6 mb-3">
-                  <label for="cc-number">Credit card number</label>
+                  <label htmlFor="cc-number">Credit card number</label>
                   <input
                     type="text"
                     className="form-control"
@@ -281,7 +281,7 @@ function CartFill(props) {
               </div>
               <div className="row">
                 <div className="col-md-3 mb-3">
-                  <label for="cc-expiration">Expiration</label>
+                  <label htmlFor="cc-expiration">Expiration</label>
                   <input
                     type="text"
                     className="form-control"
@@ -294,7 +294,7 @@ function CartFill(props) {
                   </div>
                 </div>
                 <div className="col-md-3 mb-3">
-                  <label for="cc-cvv">CVV</label>
+                  <label htmlFor="cc-cvv">CVV</label>
                   <input
                     type="text"
                     className="form-control"

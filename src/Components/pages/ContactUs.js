@@ -7,7 +7,7 @@ function ContactUs() {
   return (
     <div>
       <div className="imgcontainer">
-        <img src={ImgBg} className="img-fluid blackfade"></img>{" "}
+        <img src={ImgBg} className="img-fluid blackfade" alt="kitchen"></img>{" "}
         <div className="centered text-light">
           <h1 className="font">KONTAKT OS</h1>
           <p>
