@@ -3,10 +3,12 @@ import "../../App.css";
 import Cards from "../Cards";
 import LandingPage from "../LandingPage/LandingPage";
 import imgPaymentOptions from "../../../src/images/cards.jpg";
+import AllowCookies from "../AllowCookies";
 function Home() {
   return (
     <>
-      <LandingPage></LandingPage>
+      <LandingPage />
+      <AllowCookies />
       <Cards />
       <div className=" text-center">
         <img

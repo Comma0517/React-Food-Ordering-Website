@@ -9,8 +9,11 @@ function ContactUs() {
       <div className="imgcontainer">
         <img src={ImgBg} className="img-fluid blackfade"></img>{" "}
         <div className="centered text-light">
-          <h1 className="font">Kontakt os</h1>
-          <p>Kan du lide SaveAMeal, eller har du noget feedback?</p>
+          <h1 className="font">KONTAKT OS</h1>
+          <p>
+            Kan du lide SaveAMeal, eller har du noget feedback? Send os en
+            besked.
+          </p>
         </div>
       </div>
       <div className="container mb-5 mt-5">
@@ -25,7 +28,7 @@ function ContactUs() {
                     className="form-control"
                     id="exampleInputName"
                     aria-describedby="NameHelp"
-                    placeholder="Name"
+                    placeholder="Navn"
                   />
                 </div>
                 <div className="form-group">
@@ -38,11 +41,12 @@ function ContactUs() {
                   />
                 </div>
                 <div className="form-group">
-                  <input
+                  <textarea
                     type="message"
-                    className="form-control"
+                    className="form-control "
                     id="exampleInputmessage"
                     placeholder="Besked"
+                    rows="6"
                   />
                 </div>
 
