@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { projectFirestore } from "../Firebase";
 import ReactGA from "react-ga";
+import { Plus } from "react-feather";
 
 function CardItem(props) {
   // eslint-disable-next-line
@@ -45,7 +46,12 @@ function CardItem(props) {
       <li className="cards__item">
         <div className="cards__item__link">
           <figure className="cards__item__pic-wrap" data-category={props.label}>
-            <img className="cards__item__img" alt="Food" src={props.src} />
+            <img
+              className="cards__item__img"
+              alt="Food"
+              src={props.src}
+              loading="lazy"
+            />
           </figure>
           <div className="cards__item__info">
             <h3 className="cards__item__text">
@@ -54,8 +60,11 @@ function CardItem(props) {
             </h3>
             <p className="item-text">{props.desc}</p>
             <div>
-              <button onClick={addToCart} className="cards__item_button">
-                <i className="fas fa-plus"></i>
+              <button
+                onClick={addToCart}
+                className="btn btn-primary btn-lg rouned"
+              >
+                <i class="fas fa-plus"></i> <small>Tilføj</small>
               </button>
               {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
                 <span
