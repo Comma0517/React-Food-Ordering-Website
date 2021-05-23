@@ -30,7 +30,6 @@ function CartFill(props) {
               <li className="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
                   <h6 className="my-0">
-                    {" "}
                     {doc.name}{" "}
                     <PlusCircle
                       onClick={() => props.increaseBasket(doc.id)}
@@ -105,7 +104,7 @@ function CartFill(props) {
             <div className="alert alert-primary" role="alert">
               <div className="mb-4">
                 {" "}
-                Venligst log ind htmlFor at gennemføre ordren.
+                Venligst log ind for at gennemføre ordren.
               </div>
               <div className="pb-2">
                 {" "}
