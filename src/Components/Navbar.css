@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 80px;
   max-width: 1500px;
 }
 
@@ -45,9 +45,8 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 50vw;
-  justify-content: end;
-  margin-right: 2rem;
+  width: 60vw;
+  justify-content: start;
 }
 
 .nav-item {
@@ -64,10 +63,11 @@
 }
 
 .nav-links:hover {
-  color: black;
+  border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;
+  color: #fff;
+  text-decoration: none;
 }
-
 .fa-bars {
   color: #fff;
 }
@@ -104,7 +104,9 @@
     transition: all 0.5s ease;
     z-index: 1;
   }
-
+  .nav-item {
+    height: 80px;
+  }
   .nav-links {
     text-align: center;
     padding: 2rem;

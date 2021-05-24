@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import { CartContext } from "../Contexts/CartContext";
 import { projectFirestore } from "../Firebase";
 import ReactGA from "react-ga";
-import { Plus } from "react-feather";
 
 function CardItem(props) {
   // eslint-disable-next-line

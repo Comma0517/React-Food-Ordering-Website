@@ -42,3 +42,6 @@
   color: var(--clr-primary-4);
   transition: 250ms;
 }
+.w20 {
+  width: 15%;
+}

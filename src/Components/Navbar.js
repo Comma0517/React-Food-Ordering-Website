@@ -54,7 +54,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+          <Link to="/" className="navbar-logo mr-5" onClick={closeMobileMenu}>
             SaveAMeal
             <i className="fas fa-utensils" />
           </Link>
@@ -62,6 +62,21 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Menu
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                to="/ContactUs"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Kontakt
+              </Link>
+            </li>
             <li>
               {!localStorage.getItem("loginEmail") && (
                 <Link

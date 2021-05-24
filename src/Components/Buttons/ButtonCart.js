@@ -21,9 +21,9 @@ export const ButtonCart = ({
 
   return (
     <>
-      <Link to="/cart" className="btn-mobile">
+      <Link to="/cart" className="btn-mobile w20">
         <button
-          className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+          className={`btn ${checkButtonStyle} ${checkButtonSize} w-100 rounded`}
           onClick={onClick}
           type={type}
         >
