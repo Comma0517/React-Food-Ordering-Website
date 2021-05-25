@@ -37,32 +37,32 @@ const Cards = () => {
           >
             <SortFood sortFood={sortFood}></SortFood>
             <button
-              className="btn btn-outline-primary mb-2"
+              className="btn btn-outline-primary mb-2 w-100"
               onClick={(e) => sortFood(e.target.id)}
               id="Indisk"
             >
-              Indisk mad
+              Indisk
             </button>
             <button
-              className="btn btn-outline-primary mb-2"
+              className="btn btn-outline-primary mb-2 w-100"
               onClick={(e) => sortFood(e.target.id)}
               id="Amerikansk"
             >
-              Amerikansk mad
+              Amerikansk
             </button>
             <button
-              className="btn btn-outline-primary mb-2"
+              className="btn btn-outline-primary mb-2 w-100"
               onClick={(e) => sortFood(e.target.id)}
               id="Italiensk"
             >
-              Italiensk mad
+              Italiensk
             </button>
             <button
-              className="btn btn-outline-primary mb-2"
+              className="btn btn-outline-primary mb-2 w-100"
               onClick={(e) => sortFood(e.target.id)}
               id="Nordisk"
             >
-              Nordisk mad
+              Nordisk
             </button>
           </div>
           <div class="col-10 removepadding">
