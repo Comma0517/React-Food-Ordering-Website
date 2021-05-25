@@ -23,7 +23,7 @@ export const Button = ({
     <>
       <Link to="/login" className="btn-mobile w20">
         <button
-          className={`btn ${checkButtonStyle} ${checkButtonSize} w-100 rounded`}
+          className={`btns ${checkButtonStyle} ${checkButtonSize} w-100 rounded`}
           onClick={onClick}
           type={type}
         >

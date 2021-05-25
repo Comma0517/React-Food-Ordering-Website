@@ -31,38 +31,41 @@ const Cards = () => {
     <>
       <div class="container">
         <div class="row">
-          <div class="col-sm col-2 mt-5 text-center" data-toggle="buttons">
+          <div
+            class="col-sm col-2 mt-5 text-center sortSmall"
+            data-toggle="buttons"
+          >
             <SortFood sortFood={sortFood}></SortFood>
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-primary mb-2"
               onClick={(e) => sortFood(e.target.id)}
               id="Indisk"
             >
               Indisk mad
             </button>
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-primary mb-2"
               onClick={(e) => sortFood(e.target.id)}
               id="Amerikansk"
             >
               Amerikansk mad
             </button>
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-primary mb-2"
               onClick={(e) => sortFood(e.target.id)}
               id="Italiensk"
             >
               Italiensk mad
             </button>
             <button
-              className="btn btn-primary"
+              className="btn btn-outline-primary mb-2"
               onClick={(e) => sortFood(e.target.id)}
               id="Nordisk"
             >
               Nordisk mad
             </button>
           </div>
-          <div class="col-10">
+          <div class="col-10 removepadding">
             {" "}
             <div className="cards">
               <h1 className="cards__header">Dagens retter</h1>

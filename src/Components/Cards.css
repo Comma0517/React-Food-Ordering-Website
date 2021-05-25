@@ -189,3 +189,14 @@ h1 {
 .hd {
   image-rendering: -webkit-optimize-contrast;
 }
+@media screen and (max-width: 575px) {
+  .sortSmall {
+    padding-right: 0px;
+    padding-left: 5px;
+    font-size: 0.5rem;
+  }
+  .removepadding {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
