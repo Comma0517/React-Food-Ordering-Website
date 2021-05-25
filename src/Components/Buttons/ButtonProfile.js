@@ -21,14 +21,13 @@ export const ButtonProfile = ({
 
   return (
     <>
-      <Link to="/profile" className="btn-mobile w-100 rounded">
+      <Link to="/profile" className="btn-mobile w-25 rounded">
         <button
-          className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+          className={`btn ${checkButtonStyle} ${checkButtonSize} w-100`}
           onClick={onClick}
           type={type}
         >
           <i className="fas fa-user"></i> {children}
-          <br></br>
         </button>
       </Link>
     </>
