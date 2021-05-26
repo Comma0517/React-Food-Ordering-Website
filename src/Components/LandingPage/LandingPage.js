@@ -38,7 +38,7 @@ function LandingPage() {
     });
   }
   return (
-    <HeroContainer>
+    <HeroContainer className="mb-5">
       <HeroContent>
         <HeroItems>
           <HeroH1>Bæredygtig mad</HeroH1>

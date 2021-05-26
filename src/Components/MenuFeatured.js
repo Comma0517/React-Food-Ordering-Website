@@ -26,50 +26,52 @@ const MenuFeatured = () => {
 
   return (
     <>
-      <div class="container album py-5 bg-light">
-        <div class="row">
-          <div class="col-12 removepadding">
-            {" "}
-            <div className="cards">
-              <h1 className="mt-5">Dagens retter</h1>
-              <hr className="line"></hr>
-              {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
-                <UploadForm />
-              )}
-              <div className="cards__container">
-                <div className="cards__wrapper">
-                  {data.map((childs, index) => {
-                    return (
-                      <ul className="cards__items">
-                        {childs.map((c, cindex) => {
-                          return (
-                            <>
-                              {c.cat === "featured" && (
-                                <CardItem
-                                  src={c.url}
-                                  key={c.id}
-                                  text={c.imageText}
-                                  amountLeft={c.amountLeft}
-                                  label={c.imageLabel}
-                                  price={c.price}
-                                  id={c.id}
-                                  desc={c.desc}
-                                  cat={c.cat}
-                                ></CardItem>
-                              )}
-                            </>
-                          );
-                        })}
-                      </ul>
-                    );
-                  })}
+      <div className="bgcolor">
+        <div class="container album py-5 ">
+          <div class="row ">
+            <div class="col-12 removepadding ">
+              {" "}
+              <div className="cards ">
+                <h1 className="mt-5">Dagens retter</h1>
+                <hr className="line"></hr>
+                {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
+                  <UploadForm />
+                )}
+                <div className="cards__container">
+                  <div className="cards__wrapper ">
+                    {data.map((childs, index) => {
+                      return (
+                        <ul className="cards__items ">
+                          {childs.map((c, cindex) => {
+                            return (
+                              <>
+                                {c.cat === "featured" && (
+                                  <CardItem
+                                    src={c.url}
+                                    key={c.id}
+                                    text={c.imageText}
+                                    amountLeft={c.amountLeft}
+                                    label={c.imageLabel}
+                                    price={c.price}
+                                    id={c.id}
+                                    desc={c.desc}
+                                    cat={c.cat}
+                                  ></CardItem>
+                                )}
+                              </>
+                            );
+                          })}
+                        </ul>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="text-center mb-5">
-              <Link to="/menu" className="btn btn-primary mb-5">
-                Se hele menuen
-              </Link>
+              <div className="text-center mb-5">
+                <Link to="/menu" className="btn btn-primary mb-5">
+                  Se hele menuen
+                </Link>
+              </div>
             </div>
           </div>
         </div>

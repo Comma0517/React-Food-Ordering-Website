@@ -15,11 +15,11 @@ function Home() {
         <LandingPage />
         <AllowCookies />
         <CartSticky />
+        <Features />
         <Suspense fallback={<LoadingSpinner />}>
           {" "}
           <MenuFeatured />
         </Suspense>
-        <Features />
       </div>
     </>
   );

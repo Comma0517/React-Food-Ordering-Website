@@ -42,7 +42,7 @@ function CardItem(props) {
   }, [cart]);
   return (
     <>
-      <li className="cards__item">
+      <li className="cards__item bg-light">
         <div className="cards__item__link">
           <figure className="cards__item__pic-wrap" data-category={props.label}>
             <img
