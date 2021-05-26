@@ -6,17 +6,21 @@ import imgPaymentOptions from "../../../src/images/cards.jpg";
 import AllowCookies from "../AllowCookies";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 import CartSticky from "../CartSticky";
+import Features from "../Features";
 const MenuFeatured = lazy(() => import("../MenuFeatured"));
 function Home() {
   return (
     <>
-      <LandingPage />
-      <AllowCookies />
-      <CartSticky />
-      <Suspense fallback={<LoadingSpinner />}>
-        {" "}
-        <MenuFeatured />
-      </Suspense>
+      <div className="album bg-light">
+        <LandingPage />
+        <AllowCookies />
+        <CartSticky />
+        <Suspense fallback={<LoadingSpinner />}>
+          {" "}
+          <MenuFeatured />
+        </Suspense>
+        <Features />
+      </div>
     </>
   );
 }

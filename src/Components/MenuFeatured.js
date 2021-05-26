@@ -24,12 +24,9 @@ const MenuFeatured = () => {
   };
   const data = chunks([...docs], 4);
 
-  let sortFood = (id) => {
-    setSelectedFood(id);
-  };
   return (
     <>
-      <div class="">
+      <div class="container album py-5 bg-light">
         <div class="row">
           <div class="col-12 removepadding">
             {" "}
