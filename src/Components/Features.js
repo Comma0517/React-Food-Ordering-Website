@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, MapPin, User, UserPlus } from "react-feather";
+import { UserPlus } from "react-feather";
 import { Link } from "react-router-dom";
 import "./Features.css";
 function Features() {

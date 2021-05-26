@@ -5,6 +5,7 @@
   font-size: 20px;
   right: 25%;
   visibility: visible;
+  z-index: 1;
 }
 
 .circle {

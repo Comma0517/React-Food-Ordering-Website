@@ -14,9 +14,9 @@ function CartSticky() {
   return (
     <>
       <div className="sticky float-right pt-4 pr-4">
-        <div className="sticky-top rounded-circle border border-primary ">
+        <div className="sticky-top rounded-circle border border-primary shadow">
           <a>
-            <Link className="circle" to="/cart">
+            <Link className="circle " to="/cart">
               <ShoppingCart></ShoppingCart>
               {qty > 0 && <span className="cartAmount text-center">{qty}</span>}
             </Link>
