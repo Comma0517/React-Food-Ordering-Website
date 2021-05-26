@@ -5,12 +5,14 @@ import LandingPage from "../LandingPage/LandingPage";
 import imgPaymentOptions from "../../../src/images/cards.jpg";
 import AllowCookies from "../AllowCookies";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+import CartSticky from "../CartSticky";
 const Cards = lazy(() => import("../Cards"));
 function Home() {
   return (
     <>
       <LandingPage />
       <AllowCookies />
+      <CartSticky />
       <Suspense fallback={<LoadingSpinner />}>
         {" "}
         <Cards />

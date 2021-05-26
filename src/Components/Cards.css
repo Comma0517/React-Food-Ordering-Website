@@ -193,10 +193,17 @@ h1 {
   .sortSmall {
     padding-right: 0px;
     padding-left: 5px;
-    font-size: 0.5rem;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 0rem !important;
   }
+}
+@media screen and (max-width: 800px) {
   .removepadding {
     padding-right: 0px;
     padding-left: 0px;
+    max-width: 920px;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }

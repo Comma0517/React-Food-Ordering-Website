@@ -1,0 +1,86 @@
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  font-size: 20px;
+  right: 25%;
+  visibility: visible;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: var(--clr-white);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: relative;
+}
+.sticky:hover {
+}
+
+.cartAmount {
+  position: absolute;
+  border-radius: 50%;
+  top: -10px;
+  width: 24px;
+  height: 24px;
+  left: 30px;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  z-index: 1;
+  line-height: 16px;
+  /* font-size: 13px; */
+  transition: all 0.2s ease-in-out;
+  background-color: var(--clr-primary-3);
+  color: var(--clr-grey-10);
+}
+@media screen and (max-width: 2500px) {
+  .sticky {
+    right: 18%;
+  }
+}
+@media screen and (max-width: 2400px) {
+  .sticky {
+    right: 17%;
+  }
+}
+
+@media screen and (max-width: 2100px) {
+  .sticky {
+    right: 15%;
+  }
+}
+@media screen and (max-width: 1800px) {
+  .sticky {
+    right: 10%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  .sticky {
+    right: 8%;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .sticky {
+    right: 6%;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .sticky {
+    right: 5%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .sticky {
+    right: 0%;
+  }
+}
