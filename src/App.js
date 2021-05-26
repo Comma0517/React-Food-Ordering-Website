@@ -16,6 +16,7 @@ import ScrollToTop from "./Components/ScrollToTop";
 import ReactGA from "react-ga";
 import { UserProvider } from "./Contexts/UserContext";
 import ContactUs from "./Components/pages/ContactUs";
+import Menu from "./Components/pages/Menu";
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +34,7 @@ const App = () => {
               <AuthProvider>
                 <Navbar />
                 <Route path="/" exact component={Home} />
+                <Route path="/menu" exact component={Menu} />
                 <Route path="/Sign-up" exact component={SignUp} />
                 <Route path="/login" exact component={Login} />
                 <PrivateRoute path="/profile" exact component={Profile} />

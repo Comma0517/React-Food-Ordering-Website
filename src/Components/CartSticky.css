@@ -20,8 +20,6 @@
   justify-content: center;
   position: relative;
 }
-.sticky:hover {
-}
 
 .cartAmount {
   position: absolute;
@@ -37,7 +35,7 @@
   -webkit-justify-content: center;
   justify-content: center;
   z-index: 1;
-  line-height: 16px;
+  line-height: 20px;
   /* font-size: 13px; */
   transition: all 0.2s ease-in-out;
   background-color: var(--clr-primary-3);

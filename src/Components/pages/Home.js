@@ -6,7 +6,7 @@ import imgPaymentOptions from "../../../src/images/cards.jpg";
 import AllowCookies from "../AllowCookies";
 import LoadingSpinner from "../Loading/LoadingSpinner";
 import CartSticky from "../CartSticky";
-const Cards = lazy(() => import("../Cards"));
+const MenuFeatured = lazy(() => import("../MenuFeatured"));
 function Home() {
   return (
     <>
@@ -15,16 +15,8 @@ function Home() {
       <CartSticky />
       <Suspense fallback={<LoadingSpinner />}>
         {" "}
-        <Cards />
+        <MenuFeatured />
       </Suspense>
-
-      <div className=" text-center">
-        <img
-          className="mb-4 w-25 hd"
-          src={imgPaymentOptions}
-          alt="payment options"
-        ></img>
-      </div>
     </>
   );
 }

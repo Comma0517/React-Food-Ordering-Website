@@ -73,9 +73,9 @@ const Cards = () => {
             </button>
           </div>
           <div class="col-10 removepadding">
-            {" "}
+            <h1 className="mt-5">Menu</h1>
+            <hr className="line"></hr>{" "}
             <div className="cards">
-              <h1 className="cards__header">Dagens retter</h1>
               {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
                 <UploadForm />
               )}
