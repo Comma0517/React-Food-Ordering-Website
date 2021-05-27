@@ -21,9 +21,9 @@ export const ButtonProfile = ({
 
   return (
     <>
-      <Link to="/profile" className="btn-mobile w-25 rounded">
+      <Link to="/profile" className="btn-mobile w-25 rounded mr-2 ">
         <button
-          className={`btns ${checkButtonStyle} ${checkButtonSize} w-100`}
+          className={`btns ${checkButtonStyle} ${checkButtonSize} w-100 rounded lower-padding`}
           onClick={onClick}
           type={type}
         >

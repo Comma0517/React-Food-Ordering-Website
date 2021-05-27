@@ -19,12 +19,10 @@ function GoogleLoginHandler() {
     if (path === "/login") {
       history.push("/cart");
     }
-    // console.log(localStorage.getItem("loginEmail"));
-    //  console.log(response);
   };
   const returnFail = (response) => {
     console.log("error");
-    alert("Could not log in. Please check if you have cookies enabled.");
+    alert("Enable cookies for the website to work properly.");
   };
 
   return (

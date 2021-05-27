@@ -15,9 +15,9 @@ function Home() {
         <LandingPage />
         <AllowCookies />
         <CartSticky />
-        <Features />
+
         <Suspense fallback={<LoadingSpinner />}>
-          {" "}
+          <Features />
           <MenuFeatured />
         </Suspense>
       </div>
