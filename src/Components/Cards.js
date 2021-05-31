@@ -29,10 +29,10 @@ const Cards = () => {
   };
   return (
     <>
-      <div class="container">
-        <div class="row">
+      <div className="container">
+        <div className="row">
           <div
-            class="col-sm col-2 mt-5 text-center sortSmall"
+            className="col-sm col-2 mt-5 text-center sortSmall"
             data-toggle="buttons"
           >
             <SortFood sortFood={sortFood}></SortFood>
@@ -72,7 +72,7 @@ const Cards = () => {
               Alle retter
             </button>
           </div>
-          <div class="col-10 removepadding">
+          <div className="col-10 removepadding">
             <h1 className="mt-5">Menu</h1>
             <hr className="line"></hr>{" "}
             <div className="cards">

@@ -72,9 +72,9 @@ h1 {
   padding: 6px 8px;
   max-width: calc((100%) - 60px);
   font-size: 12px;
-  font-weight: 700;
-  color: var(--clr-primary-1);
-  background-color: var(--clr-grey-9);
+  font-weight: 500;
+  color: white;
+  background-color: rgb(87, 131, 253);
   box-sizing: border-box;
 }
 

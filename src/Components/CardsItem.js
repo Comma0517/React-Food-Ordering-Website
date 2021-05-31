@@ -16,7 +16,7 @@ function CardItem(props) {
     };
     let exists = false;
     if (cart) {
-      exists = cart.find((x) => x.name === foodItem.name);
+      exists = cart.find((x) => x.name === foodItem.name); // check if cart already has the foodItem in cart
     }
     if (exists) {
       setCart(
@@ -53,17 +53,17 @@ function CardItem(props) {
             />
           </figure>
           <div className="cards__item__info">
-            <h3 className="cards__item__text">
+            <div className="cards__item__text">
               {props.text}
               <h4 className="cards__item__price">{props.price},-</h4>
-            </h3>
+            </div>
             <p className="item-text">{props.desc}</p>
             <div>
               <button
                 onClick={addToCart}
                 className="btn btn-primary btn-lg rouned"
               >
-                <i class="fas fa-plus"></i> <small>Tilføj</small>
+                <i className="fas fa-plus"></i> <small>Tilføj</small>
               </button>
               {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
                 <span

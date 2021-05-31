@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const MenuFeatured = () => {
   let { docs } = useFirestore("images");
 
-  const [selectedFood, setSelectedFood] = useState(null);
+  const [selectedFood] = useState(null);
   useEffect(() => {
     return () => {};
   }, [selectedFood]);
@@ -27,10 +27,9 @@ const MenuFeatured = () => {
   return (
     <>
       <div className="bgcolor">
-        <div class="container album py-5 ">
-          <div class="row ">
-            <div class="col-12 removepadding ">
-              {" "}
+        <div className="container album py-5 ">
+          <div className="row ">
+            <div className="col-12 removepadding ">
               <div className="cards ">
                 <h1 className="mt-5">Dagens retter</h1>
                 <hr className="line"></hr>

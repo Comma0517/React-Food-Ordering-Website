@@ -1,28 +1,53 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./CartSticky.css";
 import { ShoppingCart } from "react-feather";
-import { CartContext } from "../Contexts/CartContext";
-import { Link } from "react-router-dom";
+import { CartContext, CartProvider } from "../Contexts/CartContext";
+
+import CartPopup from "./Cart/CartPopup";
 
 function CartSticky() {
   const [cart] = useContext(CartContext);
+  const [showPopup, setShowPopup] = useState();
   let qty = 0;
   if (cart) {
     qty = cart.reduce((acc, curr) => acc + curr.qty, 0);
   }
-
+  const togglePopup = () => setShowPopup(!showPopup);
   return (
     <>
-      <div className="sticky float-right pt-4 pr-4">
-        <div className="sticky-top rounded-circle border border-primary shadow">
-          <a>
-            <Link className="circle " to="/cart">
-              <ShoppingCart></ShoppingCart>
-              {qty > 0 && <span className="cartAmount text-center">{qty}</span>}
-            </Link>
-          </a>
+      {!showPopup && (
+        <div className="sticky float-right pt-4 pr-4">
+          <div className="sticky-top rounded-circle border border-primary shadow">
+            <span onClick={togglePopup}>
+              <span className="circle">
+                <ShoppingCart></ShoppingCart>
+                {qty > 0 && (
+                  <span className="cartAmount text-center">{qty}</span>
+                )}
+              </span>
+            </span>
+          </div>
         </div>
-      </div>
+      )}
+      {showPopup && (
+        <>
+          <div className="stickyPopup w-50">
+            <CartPopup togglePopup={togglePopup} />
+          </div>
+          <div className="sticky float-right">
+            <div className="sticky-top rounded-circle border border-primary shadow mr-5">
+              <span onClick={togglePopup}>
+                <span className="circle">
+                  <ShoppingCart></ShoppingCart>
+                  {qty > 0 && (
+                    <span className="cartAmount text-center">{qty}</span>
+                  )}
+                </span>
+              </span>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 }

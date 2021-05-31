@@ -128,7 +128,7 @@ function Navbar() {
           {button && (
             <ButtonCart onClick={handleCartClick} buttonStyle="btn--outline">
               {" "}
-              {cart != 0 && qty}
+              {cart != 0 && qty + " x"}
               <i className="fas fa-shopping-cart"></i>{" "}
               {cart != 0 && totalPrice + deliveryCost + currency}
             </ButtonCart>
