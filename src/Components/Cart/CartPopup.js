@@ -15,7 +15,7 @@ function CartPopup(props) {
             <div class="col">
               {" "}
               <Link to="/cart" className="btn btn-primary w-50">
-                Køb
+                Til kassen
               </Link>
             </div>
             <div class="col">
@@ -24,7 +24,7 @@ function CartPopup(props) {
                 className="btn btn-outline-primary"
                 onClick={props.togglePopup}
               >
-                Luk kurven
+                Fortsæt med at handle
               </button>
             </div>
           </div>

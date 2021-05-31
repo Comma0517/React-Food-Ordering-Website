@@ -7,6 +7,7 @@ import {
   HeroP,
   HeroBtn,
 } from "./LandingPageElements";
+import "./LandingPage.css";
 import ReactGA from "react-ga";
 import { ArrowDownCircle } from "react-feather";
 function LandingPage() {
@@ -40,15 +41,21 @@ function LandingPage() {
   return (
     <HeroContainer className="mb-5">
       <HeroContent>
-        <HeroItems>
+        <HeroItems className="">
           <HeroH1>Bæredygtig mad</HeroH1>
           <HeroP>Leveret lige til døren</HeroP>
-          <HeroBtn onClick={navigateToMenu} className="btn btn-primary">
-            <span className="mr-2 p-5"> Se menuen </span>
 
-            <span className="">
-              <ArrowDownCircle size={40} />
-            </span>
+          <HeroBtn
+            onClick={navigateToMenu}
+            className="btn btn-primary hvr-icon-hang"
+          >
+            <div className="">
+              <span className="mr-2 p-5 "> Se menuen </span>
+
+              <span className="hvr-hang">
+                <ArrowDownCircle size={40} className="hvr-icon" />
+              </span>
+            </div>
           </HeroBtn>
         </HeroItems>
       </HeroContent>

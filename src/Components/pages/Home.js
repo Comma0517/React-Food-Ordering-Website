@@ -13,10 +13,10 @@ function Home() {
       <div className="album bg-light">
         <LandingPage />
         <AllowCookies />
-        <CartSticky />
 
         <Suspense fallback={<LoadingSpinner />}>
           <Features />
+          <CartSticky />
           <MenuFeatured />
         </Suspense>
       </div>

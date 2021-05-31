@@ -48,5 +48,5 @@ export const HeroP = styled.p`
 
 export const HeroBtn = styled.button`
   font-size: 1.6rem;
-  padding: 1rem 1rem;
+  padding: 1rem 3rem;
 `;
