@@ -16,22 +16,18 @@ function CartSticky() {
   return (
     <>
       {!showPopup && (
-        <div className="sticky float-right pt-4 pr-4 hvr-grow">
-          <div className="sticky-top rounded-circle border border-primary shadow ">
-            <span onClick={togglePopup}>
-              <span className="circle ">
-                <ShoppingCart></ShoppingCart>
-                {qty > 0 && (
-                  <span className="cartAmount text-center">{qty}</span>
-                )}
-              </span>
+        <div className="sticky float-right hvr-grow">
+          <div className=" rounded-circle border border-primary shadow ">
+            <span className="circle" onClick={togglePopup}>
+              <ShoppingCart></ShoppingCart>
+              {qty > 0 && <span className="cartAmount text-center">{qty}</span>}
             </span>
           </div>
         </div>
       )}
       {showPopup && (
         <>
-          <div className="stickyPopup w-50">
+          <div className="stickyPopup ">
             <CartPopup togglePopup={togglePopup} />
           </div>
           <div className="sc-popup-open ">

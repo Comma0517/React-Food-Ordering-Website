@@ -1,11 +1,11 @@
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 2.5%;
   font-size: 20px;
-  right: 25%;
-  visibility: visible;
+  right: 6%;
   z-index: 1;
+  margin-right: 1%;
 }
 
 .stickyPopup {
@@ -91,46 +91,4 @@
 .hvr-shrink:active {
   -webkit-transform: scale(0.9);
   transform: scale(0.9);
-}
-
-@media screen and (max-width: 2500px) {
-  .sticky {
-    right: 18%;
-  }
-}
-@media screen and (max-width: 2400px) {
-  .sticky {
-    right: 17%;
-  }
-}
-
-@media screen and (max-width: 2100px) {
-  .sticky {
-    right: 15%;
-  }
-}
-@media screen and (max-width: 1800px) {
-  .sticky {
-    right: 10%;
-  }
-}
-@media screen and (max-width: 1600px) {
-  .sticky {
-    right: 8%;
-  }
-}
-@media screen and (max-width: 1500px) {
-  .sticky {
-    right: 6%;
-  }
-}
-@media screen and (max-width: 1450px) {
-  .sticky {
-    right: 5%;
-  }
-}
-@media screen and (max-width: 1400px) {
-  .sticky {
-    right: 0%;
-  }
 }

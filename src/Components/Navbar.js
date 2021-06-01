@@ -28,7 +28,7 @@ function Navbar() {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const deliveryCost = 29;
-  const currency = "kr.";
+  const currency = " kr.";
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
