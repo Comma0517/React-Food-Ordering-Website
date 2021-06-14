@@ -39,23 +39,19 @@ function LandingPage() {
     });
   }
   return (
-    <HeroContainer className="mb-5">
+    <HeroContainer className='mb-5'>
       <HeroContent>
-        <HeroItems className="">
+        <HeroItems className=''>
           <HeroH1>Bæredygtig mad</HeroH1>
           <HeroP>Leveret lige til døren</HeroP>
 
           <HeroBtn
             onClick={navigateToMenu}
-            className="btn btn-primary hvr-icon-hang"
+            className='btn btn-primary hvr-icon-hang'
           >
-            <div className="">
-              <span className="mr-2 p-5 "> Se menuen </span>
-
-              <span className="hvr-hang">
-                <ArrowDownCircle size={40} className="hvr-icon" />
-              </span>
-            </div>
+            {" "}
+            <span className='mr-2 p-5 '> Se menuen </span>
+            <ArrowDownCircle size={40} className='hvr-icon' />
           </HeroBtn>
         </HeroItems>
       </HeroContent>

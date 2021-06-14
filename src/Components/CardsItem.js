@@ -42,35 +42,35 @@ function CardItem(props) {
   }, [cart]);
   return (
     <>
-      <li className="cards__item bg-light">
-        <div className="cards__item__link">
-          <figure className="cards__item__pic-wrap" data-category={props.label}>
+      <li className='cards__item bg-light'>
+        <div className='cards__item__link'>
+          <figure className='cards__item__pic-wrap' data-category={props.label}>
             <img
-              className="cards__item__img"
-              alt="Food"
+              className='cards__item__img'
+              alt='Food'
               src={props.src}
-              loading="lazy"
+              loading='lazy'
             />
           </figure>
-          <div className="cards__item__info">
-            <div className="cards__item__text">
+          <div className='cards__item__info'>
+            <div className='cards__item__text'>
               {props.text}
-              <h4 className="cards__item__price">{props.price},-</h4>
+              <h4 className='cards__item__price'>{props.price},-</h4>
             </div>
-            <p className="item-text">{props.desc}</p>
+            <p className='item-text'>{props.desc}</p>
             <div>
               <button
                 onClick={addToCart}
-                className="btn btn-primary btn-lg rouned"
+                className='btn btn-primary btn-lg rouned '
               >
-                <i className="fas fa-plus"></i> <small>Tilføj</small>
+                <i className='fas fa-plus'></i> <small>Tilføj</small>
               </button>
               {localStorage.getItem("loginEmail") === "admin@gmail.com" && (
                 <span
                   onClick={removeCard}
-                  className="cards__item_button_remove"
+                  className='cards__item_button_remove'
                 >
-                  <i className="fas fa-trash fa-2x"></i>
+                  <i className='fas fa-trash fa-2x'></i>
                 </span>
               )}
             </div>

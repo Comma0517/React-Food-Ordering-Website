@@ -43,35 +43,35 @@ function CartQuickSummary() {
   }
   return (
     <div>
-      <h4 className="d-flex justify-content-between align-items-center mb-3">
+      <h4 className='d-flex justify-content-between align-items-center mb-3'>
         Din kurv
       </h4>
 
-      <ul className="list-group mb-3 text-center">
+      <ul className='list-group mb-3 text-center'>
         {cart.map((doc) => (
-          <li className=" d-flex justify-content-between row mb-4">
-            <div className="container">
-              <div className="row">
-                <div className="col-sm">
+          <li className=' d-flex justify-content-between row mb-2'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-sm'>
                   {doc.qty} x {doc.name}
                 </div>
-                <div className="col-sm ">
+                <div className='col-sm '>
                   <button
-                    className="btn btn-outline-success btn-sm mobile"
+                    className='btn btn-outline-success btn-sm mobile'
                     onClick={() => increaseBasket(doc.id)}
                   >
                     <Plus />
                   </button>{" "}
                   <button
-                    className="btn btn-outline-danger btn-sm mobile"
+                    className='btn btn-outline-danger btn-sm mobile'
                     onClick={() => decreaseBasket(doc.id, doc.qty)}
                   >
                     <Minus />
                   </button>{" "}
                 </div>
-                <div className="col-sm mb-4">
+                <div className='col-sm'>
                   {" "}
-                  <span className="text-muted col-sm">
+                  <span className='text-muted col-sm'>
                     {doc.price}
                     {fullPrice}
                   </span>
@@ -81,9 +81,9 @@ function CartQuickSummary() {
           </li>
         ))}
 
-        <li className="d-flex justify-content-between text-center">
+        <li className='d-flex justify-content-between text-center'>
           <span>Total (DKK)</span>
-          <span className="">
+          <span className=''>
             {totalPrice}
             {fullPrice}
           </span>

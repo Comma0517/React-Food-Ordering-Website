@@ -4,23 +4,23 @@ import CartQuickSummary from "./CartQuickSummary";
 
 function CartPopup(props) {
   return (
-    <div className="">
-      <div className="card">
-        <div className="card-body">
+    <div className=''>
+      <div className='card'>
+        <div className='card-body'>
           <CartQuickSummary />
         </div>
-        <div class="container mb-4 text-center">
-          <div class="row">
-            <div class="col">
+        <div class='container mb-4 text-center'>
+          <div class='row'>
+            <div class='col'>
               {" "}
-              <Link to="/cart" className="btn btn-primary ">
+              <Link to='/cart' className='btn btn-primary '>
                 Til kassen
               </Link>
             </div>
-            <div class="col">
+            <div class='col'>
               {" "}
               <button
-                className="btn btn-outline-primary"
+                className='btn btn-outline-primary'
                 onClick={props.togglePopup}
               >
                 Fortsæt med at handle

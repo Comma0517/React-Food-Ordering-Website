@@ -3,8 +3,6 @@
 }
 @media screen and (max-width: 576px) {
   .mobile {
-    margin-bottom: 1em;
-    margin-top: 1em;
     max-width: 50%;
   }
 }
